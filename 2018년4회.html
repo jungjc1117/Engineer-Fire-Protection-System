@@ -11,6 +11,15 @@
       margin-top: 20px;
       box-sizing: border-box;
     }
+    .button-container {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .button-container button {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -86,27 +95,50 @@
     </tbody>
   </table>
 
-  <hr>
+<hr>
 
   <h2>선택된 이미지 주소</h2>
   <textarea id="srcList" readonly></textarea>
+  <div class="button-container">
+    <button onclick="copyToClipboard()">복사</button>
+    <button onclick="clearAll()">삭제</button>
+  </div>
 
   <script>
     function updateSrcList(checkbox) {
-      // 체크박스가 속한 행(tr)을 찾아, 그 행의 첫 번째 셀(td)에 있는 이미지를 찾습니다.
       const row = checkbox.closest('tr');
       const image = row.querySelector('td:first-child img');
       const src = image.getAttribute('src');
       const textarea = document.getElementById('srcList');
       
       if (checkbox.checked) {
-        // 체크되면 주소 추가
         textarea.value += src + '\n';
       } else {
-        // 체크 해제되면 주소 제거
         const lines = textarea.value.split('\n').filter(line => line.trim() !== src.trim());
         textarea.value = lines.join('\n');
       }
+    }
+
+    // 복사 버튼 기능
+    function copyToClipboard() {
+      const textarea = document.getElementById('srcList');
+      textarea.select();
+      document.execCommand('copy');
+      
+    }
+
+    // 삭제 버튼 기능
+    function clearAll() {
+      // 텍스트 박스 초기화
+      const textarea = document.getElementById('srcList');
+      textarea.value = '';
+
+      // 모든 체크박스 초기화
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
+      
     }
   </script>
 </body>

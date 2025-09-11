@@ -32,6 +32,15 @@ def create_html_files(file_names):
       margin-top: 20px;
       box-sizing: border-box;
     }
+    .button-container {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .button-container button {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
   </style>\n")
         f.write("</head>\n")
         f.write("<body>\n")

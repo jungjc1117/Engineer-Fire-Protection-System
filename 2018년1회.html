@@ -3,24 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <title>2018년1회</title>
+  <style>
+    /* 텍스트 박스 스타일 */
+    #srcList {
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
   <h1>2018년1회</h1>
-  <img src=".\2018년1회\2018년1회_01.png" /><br>
-<img src=".\2018년1회\2018년1회_02.png" /><br>
-<img src=".\2018년1회\2018년1회_03.png" /><br>
-<img src=".\2018년1회\2018년1회_04.png" /><br>
-<img src=".\2018년1회\2018년1회_05.png" /><br>
-<img src=".\2018년1회\2018년1회_06.png" /><br>
-<img src=".\2018년1회\2018년1회_07.png" /><br>
-<img src=".\2018년1회\2018년1회_08.png" /><br>
-<img src=".\2018년1회\2018년1회_09.png" /><br>
-<img src=".\2018년1회\2018년1회_10.png" /><br>
-<img src=".\2018년1회\2018년1회_11.png" /><br>
-<img src=".\2018년1회\2018년1회_12.png" /><br>
-<img src=".\2018년1회\2018년1회_13.png" /><br>
-<img src=".\2018년1회\2018년1회_14.png" /><br>
-<img src=".\2018년1회\2018년1회_15.png" /><br>
 
+  <table border="1">
+    <tbody>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_01.png" alt="이미지 1" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_02.png" alt="이미지 2" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_03.png" alt="이미지 3" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_04.png" alt="이미지 4" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_05.png" alt="이미지 5" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_06.png" alt="이미지 6" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_07.png" alt="이미지 7" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_08.png" alt="이미지 8" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_09.png" alt="이미지 9" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_10.png" alt="이미지 10" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_11.png" alt="이미지 11" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_12.png" alt="이미지 12" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_13.png" alt="이미지 13" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_14.png" alt="이미지 14" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      <tr>
+        <td><img src=".\2018년1회\2018년1회_15.png" alt="이미지 15" /></td>
+        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h2>선택된 이미지 주소</h2>
+  <textarea id="srcList" readonly></textarea>
+
+  <script>
+    function updateSrcList(checkbox) {
+      // 체크박스가 속한 행(tr)을 찾아, 그 행의 첫 번째 셀(td)에 있는 이미지를 찾습니다.
+      const row = checkbox.closest('tr');
+      const image = row.querySelector('td:first-child img');
+      const src = image.getAttribute('src');
+      const textarea = document.getElementById('srcList');
+      
+      if (checkbox.checked) {
+        // 체크되면 주소 추가
+        textarea.value += src + '\n';
+      } else {
+        // 체크 해제되면 주소 제거
+        const lines = textarea.value.split('\n').filter(line => line.trim() !== src.trim());
+        textarea.value = lines.join('\n');
+      }
+    }
+  </script>
 </body>
 </html>

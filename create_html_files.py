@@ -16,10 +16,37 @@ def create_html_files(file_names):
         f.write("<html lang=\"ko\">\n")
         f.write("<head>\n")
         f.write(f"  <meta charset=\"UTF-8\">\n")
-        f.write(f"  <title>{name}</title>\n")
+        f.write(f"  <title>{name}</title>
+  <style>
+    /* 테이블 셀에 flex를 적용하여 이미지와 체크박스를 정렬합니다. */
+    td {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      margin-right: 10px;
+    }
+    #srcList {
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      box-sizing: border-box;
+    }
+  </style>\n")
         f.write("</head>\n")
         f.write("<body>\n")
-        f.write(f"  <h1>{name}</h1>\n")
+        f.write(f"  <h1>{name}</h1>
+
+  <table border="1">
+<thead>
+      <tr>
+        <th>문제</th>
+        <th>체크</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>\n")
         f.write("</body>\n")
         f.write("</html>")
       print(f"'{file_path}' 파일을 성공적으로 만들었습니다.")

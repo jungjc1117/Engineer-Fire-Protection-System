@@ -3,27 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <title>2010년1회</title>
+  <style>
+    .image-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    img {
+      margin-right: 10px;
+    }
+    #srcList {
+      width: 100%;
+      height: 200px;
+      margin-top: 20px;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
   <h1>2010년1회</h1>
-  <img src=".\2010년1회\2010년1회_01.png" /><br>
-<img src=".\2010년1회\2010년1회_02.png" /><br>
-<img src=".\2010년1회\2010년1회_03.png" /><br>
-<img src=".\2010년1회\2010년1회_04.png" /><br>
-<img src=".\2010년1회\2010년1회_05.png" /><br>
-<img src=".\2010년1회\2010년1회_06.png" /><br>
-<img src=".\2010년1회\2010년1회_07.png" /><br>
-<img src=".\2010년1회\2010년1회_08.png" /><br>
-<img src=".\2010년1회\2010년1회_09.png" /><br>
-<img src=".\2010년1회\2010년1회_10.png" /><br>
-<img src=".\2010년1회\2010년1회_11.png" /><br>
-<img src=".\2010년1회\2010년1회_12.png" /><br>
-<img src=".\2010년1회\2010년1회_13.png" /><br>
-<img src=".\2010년1회\2010년1회_14.png" /><br>
-<img src=".\2010년1회\2010년1회_15.png" /><br>
-<img src=".\2010년1회\2010년1회_16.png" /><br>
-<img src=".\2010년1회\2010년1회_17.png" /><br>
-<img src=".\2010년1회\2010년1회_18.png" /><br>
 
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_01.png" alt="이미지 1">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_02.png" alt="이미지 2">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_03.png" alt="이미지 3">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_04.png" alt="이미지 4">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_05.png" alt="이미지 5">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_06.png" alt="이미지 6">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_07.png" alt="이미지 7">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_08.png" alt="이미지 8">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_09.png" alt="이미지 9">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_10.png" alt="이미지 10">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_11.png" alt="이미지 11">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_12.png" alt="이미지 12">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_13.png" alt="이미지 13">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_14.png" alt="이미지 14">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_15.png" alt="이미지 15">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_16.png" alt="이미지 16">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_17.png" alt="이미지 17">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+  <div class="image-container">
+    <img src="./2010년1회/2010년1회_18.png" alt="이미지 18">
+    <input type="checkbox" onchange="updateSrcList(this)">
+  </div>
+
+  <hr>
+
+  <h2>선택된 이미지 주소</h2>
+  <textarea id="srcList" readonly></textarea>
+
+  <script>
+    function updateSrcList(checkbox) {
+      const parentDiv = checkbox.parentElement;
+      const image = parentDiv.querySelector('img');
+      const src = image.src;
+      const textarea = document.getElementById('srcList');
+      
+      if (checkbox.checked) {
+        // 체크되면 주소 추가
+        textarea.value += src + '\n';
+      } else {
+        // 체크 해제되면 주소 제거
+        const lines = textarea.value.split('\n').filter(line => line !== src);
+        textarea.value = lines.join('\n');
+      }
+    }
+  </script>
 </body>
 </html>

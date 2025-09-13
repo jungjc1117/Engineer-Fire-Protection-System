@@ -51,7 +51,8 @@ def create_html_files(file_names):
       <tr>
         <th>문제</th>
         <th>체크</th>
-      </tr>
+ 
+     </tr>
     </thead>
     <tbody>
       <tr>

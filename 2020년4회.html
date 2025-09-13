@@ -4,12 +4,37 @@
   <meta charset="UTF-8">
   <title>2020년4회</title>
   <style>
-    /* 텍스트 박스 스타일 */
+    /* 테이블 스타일 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+    }
+    td:first-child {
+      width: 50%;
+    }
+    img {
+      max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+      height: auto;
+    }
+    textarea.image-content {
+      width: 100%;
+      height: 100px;
+      box-sizing: border-box;
+      resize: none;
+    }
+
+    /* 하단 텍스트 박스 스타일 */
     #srcList {
       width: 100%;
       height: 200px;
       margin-top: 20px;
       box-sizing: border-box;
+      resize: none;
     }
     .button-container {
       margin-top: 10px;
@@ -29,76 +54,76 @@
     <tbody>
       <tr>
         <td><img src=".\2020년4회\2020년4회_01.png" alt="이미지 1" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_02.png" alt="이미지 2" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_03.png" alt="이미지 3" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_04.png" alt="이미지 4" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_05.png" alt="이미지 5" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_06.png" alt="이미지 6" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_07.png" alt="이미지 7" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_08.png" alt="이미지 8" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_09.png" alt="이미지 9" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_10.png" alt="이미지 10" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_11.png" alt="이미지 11" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_12.png" alt="이미지 12" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_13.png" alt="이미지 13" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_14.png" alt="이미지 14" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_15.png" alt="이미지 15" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_16.png" alt="이미지 16" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_17.png" alt="이미지 17" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       <tr>
         <td><img src=".\2020년4회\2020년4회_18.png" alt="이미지 18" /></td>
-        <td><input type="checkbox" onchange="updateSrcList(this)"></td>
-      </tr>
+        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
+     </tr>
       
     </tbody>
   </table>
@@ -113,40 +138,43 @@
   </div>
 
   <script>
-    function updateSrcList(checkbox) {
-      const row = checkbox.closest('tr');
-      const image = row.querySelector('td:first-child img');
-      const src = image.getAttribute('src');
-      const textarea = document.getElementById('srcList');
+    function updateSrcList() {
+      const allRows = document.querySelectorAll('tbody tr');
+      let combinedContent = '';
+
+      allRows.forEach(row => {
+        const image = row.querySelector('img');
+        const contentTextarea = row.querySelector('.image-content');
+        
+        const src = image.getAttribute('src');
+        const text = contentTextarea.value.trim();
+        
+        // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+        if (text !== '') {
+          combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+        }
+      });
       
-      if (checkbox.checked) {
-        textarea.value += src + '\n';
-      } else {
-        const lines = textarea.value.split('\n').filter(line => line.trim() !== src.trim());
-        textarea.value = lines.join('\n');
-      }
+      document.getElementById('srcList').value = combinedContent;
     }
 
-    // 복사 버튼 기능
     function copyToClipboard() {
       const textarea = document.getElementById('srcList');
       textarea.select();
       document.execCommand('copy');
-      
+      alert('주소와 내용이 클립보드에 복사되었습니다.');
     }
 
-    // 삭제 버튼 기능
     function clearAll() {
-      // 텍스트 박스 초기화
-      const textarea = document.getElementById('srcList');
-      textarea.value = '';
-
-      // 모든 체크박스 초기화
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = false;
+      // 모든 textarea 초기화
+      const allTextareas = document.querySelectorAll('.image-content');
+      allTextareas.forEach(textarea => {
+        textarea.value = '';
       });
-      
+
+      // 하단 텍스트 박스 초기화
+      document.getElementById('srcList').value = '';
+      alert('모든 내용이 초기화되었습니다.');
     }
   </script>
 </body>

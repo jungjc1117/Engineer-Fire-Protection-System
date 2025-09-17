@@ -1,180 +1,271 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>2012년1회</title>
-  <style>
-    /* 테이블 스타일 */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid black;
-      padding: 8px;
-      vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
-    }
-    td:first-child {
-      width: 50%;
-    }
-    img {
-      max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
-      height: auto;
-    }
-    textarea.image-content {
-      width: 100%;
-      height: 100px;
-      box-sizing: border-box;
-      resize: none;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>2012년1회</title>
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
 
-    /* 하단 텍스트 박스 스타일 */
-    #srcList {
-      width: 100%;
-      height: 200px;
-      margin-top: 20px;
-      box-sizing: border-box;
-      resize: none;
-    }
-    .button-container {
-      margin-top: 10px;
-      display: flex;
-      gap: 10px;
-    }
-    .button-container button {
-      padding: 8px 16px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h1>2012년1회</h1>
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2012년1회</h1>
 
-  <table border="1">
-    <tbody>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_01.png" alt="이미지 1" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_02.png" alt="이미지 2" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_03.png" alt="이미지 3" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_04.png" alt="이미지 4" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_05.png" alt="이미지 5" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_06.png" alt="이미지 6" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_07.png" alt="이미지 7" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_08.png" alt="이미지 8" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_09.png" alt="이미지 9" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_10.png" alt="이미지 10" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_11.png" alt="이미지 11" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_12.png" alt="이미지 12" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_13.png" alt="이미지 13" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_14.png" alt="이미지 14" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_15.png" alt="이미지 15" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_16.png" alt="이미지 16" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_17.png" alt="이미지 17" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-      <tr>
-        <td><img src=".\2012년1회\2012년1회_18.png" alt="이미지 18" /></td>
-        <td><textarea class="image-content" oninput="updateSrcList()"></textarea></td> 
-     </tr>
-    </tbody>
-  </table>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_01.png" alt="이미지 1" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_02.png" alt="이미지 2" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_03.png" alt="이미지 3" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_04.png" alt="이미지 4" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_05.png" alt="이미지 5" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_06.png" alt="이미지 6" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_07.png" alt="이미지 7" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_08.png" alt="이미지 8" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_09.png" alt="이미지 9" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_10.png" alt="이미지 10" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_11.png" alt="이미지 11" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_12.png" alt="이미지 12" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_13.png" alt="이미지 13" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_14.png" alt="이미지 14" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_15.png" alt="이미지 15" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_16.png" alt="이미지 16" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_17.png" alt="이미지 17" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><img src=".\2012년1회\2012년1회_18.png" alt="이미지 18" /></td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-<hr>
+    <hr />
 
-  <h2>선택된 이미지 주소</h2>
-  <textarea id="srcList" readonly></textarea>
-  <div class="button-container">
-    <button onclick="copyToClipboard()">복사</button>
-    <button onclick="clearAll()">삭제</button>
-  </div>
+    <h2>선택된 이미지 주소</h2>
+    <textarea id="srcList" readonly></textarea>
+    <div class="button-container">
+      <button onclick="copyToClipboard()">복사</button>
+      <button onclick="clearAll()">삭제</button>
+    </div>
 
-  <script>
-    function updateSrcList() {
-      const allRows = document.querySelectorAll('tbody tr');
-      let combinedContent = '';
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
 
-      allRows.forEach(row => {
-        const image = row.querySelector('img');
-        const contentTextarea = row.querySelector('.image-content');
-        
-        const src = image.getAttribute('src');
-        const text = contentTextarea.value.trim();
-        
-        // 텍스트가 있을 때만 최종 텍스트 박스에 추가
-        if (text !== '') {
-          combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
-        }
-      });
-      
-      document.getElementById('srcList').value = combinedContent;
-    }
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
 
-    function copyToClipboard() {
-      const textarea = document.getElementById('srcList');
-      textarea.select();
-      document.execCommand('copy');
-      alert('주소와 내용이 클립보드에 복사되었습니다.');
-    }
+          const src = image.getAttribute("src");
+          const text = contentTextarea.value.trim();
 
-    function clearAll() {
-      // 모든 textarea 초기화
-      const allTextareas = document.querySelectorAll('.image-content');
-      allTextareas.forEach(textarea => {
-        textarea.value = '';
-      });
+          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          if (text !== "") {
+            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+          }
+        });
 
-      // 하단 텍스트 박스 초기화
-      document.getElementById('srcList').value = '';
-      alert('모든 내용이 초기화되었습니다.');
-    }
-  </script>
-</body>
+        document.getElementById("srcList").value = combinedContent;
+      }
+
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        // 모든 textarea 초기화
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+
+        // 하단 텍스트 박스 초기화
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+    </script>
+  </body>
 </html>

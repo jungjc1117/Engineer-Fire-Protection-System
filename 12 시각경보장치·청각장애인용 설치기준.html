@@ -28,7 +28,23 @@
         box-sizing: border-box;
         resize: none;
       }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
 
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
       /* 하단 텍스트 박스 스타일 */
       #srcList {
         width: 100%;
@@ -49,260 +65,261 @@
     </style>
   </head>
   <body>
-    <h1>12 시각경보장치·청각장애인용 설치기준</h1>
-
-    <table border="1">
-      <tbody>
-        <tr>
-          <td>
-            <img
-              src=".\2017년2회\2017년2회_02.png"
-              alt="청각장애인용 시각경보장치, 설치 위치 및 높이 기준
+    <h2>12 시각경보장치·청각장애인용 설치기준</h2>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년2회\2017년2회_02.png"
+                  alt="청각장애인용 시각경보장치, 설치 위치 및 높이 기준
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2012년2회\2012년2회_10.png"
-              alt="통로유도등 설치 위치 표시, 총 수량 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2012년2회\2012년2회_10.png"
+                  alt="통로유도등 설치 위치 표시, 총 수량 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2021년2회\2021년2회_18.png"
-              alt="시각경보장치 설치기준, 청각장애인용, 설치 위치, 광원 전원 방식
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2021년2회\2021년2회_18.png"
+                  alt="시각경보장치 설치기준, 청각장애인용, 설치 위치, 광원 전원 방식
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년4회\2018년4회_02.png"
-              alt="연기감지기 설치기준, 거리·위치 조건
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년4회\2018년4회_02.png"
+                  alt="연기감지기 설치기준, 거리·위치 조건
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2016년2회\2016년2회_16.png"
-              alt="시각경보장치 설치기준, 청각장애인용, 위치·광원 조건
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2016년2회\2016년2회_16.png"
+                  alt="시각경보장치 설치기준, 청각장애인용, 위치·광원 조건
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년4회\2018년4회_10.png"
-              alt="복도통로유도등 설치기준, 위치·간격·내구성
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년4회\2018년4회_10.png"
+                  alt="복도통로유도등 설치기준, 위치·간격·내구성
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2024년1회\2024년1회_17.png"
-              alt="종단저항 설치 기준, 감지기회로 도통시험, 설치 위치·방법
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2024년1회\2024년1회_17.png"
+                  alt="종단저항 설치 기준, 감지기회로 도통시험, 설치 위치·방법
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년1회\2019년1회_14.png"
-              alt="시각경보장치 설치기준, 위치·높이·광원·형식승인 조건
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년1회\2019년1회_14.png"
+                  alt="시각경보장치 설치기준, 위치·높이·광원·형식승인 조건
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년4회\2020년4회_16.png"
-              alt="시각경보장치, 청각장애인용, 설치 위치 및 높이 기준
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년4회\2020년4회_16.png"
+                  alt="시각경보장치, 청각장애인용, 설치 위치 및 높이 기준
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2011년1회\2011년1회_13.png"
-              alt="할론소화설비 연기감지기 회로 수정, 종단저항 위치
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년1회\2011년1회_13.png"
+                  alt="할론소화설비 연기감지기 회로 수정, 종단저항 위치
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2014년4회\2014년4회_03.png"
-              alt="연결송수관설비 가압송수장치 설치 기준 (높이, 위치, 강판함, 문짝 재질)
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2014년4회\2014년4회_03.png"
+                  alt="연결송수관설비 가압송수장치 설치 기준 (높이, 위치, 강판함, 문짝 재질)
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년2회\2015년2회_09.png"
-              alt="시각경보장치, 설치기준, 높이 및 위치 조건
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년2회\2015년2회_09.png"
+                  alt="시각경보장치, 설치기준, 높이 및 위치 조건
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년2회\2019년2회_11.png"
-              alt="비상조명등 설치기준, 조도·위치·예비전원 조건
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년2회\2019년2회_11.png"
+                  alt="비상조명등 설치기준, 조도·위치·예비전원 조건
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년1회\2020년1회_11.png"
-              alt="시각경보장치 설치기준: 설치 위치, 높이, 광원 전원 방식, 시선 집중 장소
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년1회\2020년1회_11.png"
+                  alt="시각경보장치 설치기준: 설치 위치, 높이, 광원 전원 방식, 시선 집중 장소
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년4회\2010년4회_02.png"
-              alt="무선통신보조설비, 무반사 종단저항, 설치 위치 및 목적
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년4회\2010년4회_02.png"
+                  alt="무선통신보조설비, 무반사 종단저항, 설치 위치 및 목적
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2011년1회\2011년1회_17.png"
-              alt="제1종 연기감지기 설치기준 (거리, 위치 등)
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년1회\2011년1회_17.png"
+                  alt="제1종 연기감지기 설치기준 (거리, 위치 등)
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr />
-
-    <h2>선택된 이미지 주소</h2>
-    <textarea id="srcList" readonly></textarea>
-    <div class="button-container">
-      <button onclick="copyToClipboard()">복사</button>
-      <button onclick="clearAll()">삭제</button>
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+        </div>
+      </div>
     </div>
 
     <script>

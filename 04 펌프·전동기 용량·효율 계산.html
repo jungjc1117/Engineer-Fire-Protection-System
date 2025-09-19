@@ -28,7 +28,23 @@
         box-sizing: border-box;
         resize: none;
       }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
 
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
       /* 하단 텍스트 박스 스타일 */
       #srcList {
         width: 100%;
@@ -49,395 +65,396 @@
     </style>
   </head>
   <body>
-    <h1>04 펌프·전동기 용량·효율 계산</h1>
-
-    <table border="1">
-      <tbody>
-        <tr>
-          <td>
-            <img
-              src=".\2014년4회\2014년4회_10.png"
-              alt="펌프 전동기 용량 계산, 역률 개선용 콘덴서 용량 계산
+    <h2>04 펌프·전동기 용량·효율 계산</h2>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src=".\2014년4회\2014년4회_10.png"
+                  alt="펌프 전동기 용량 계산, 역률 개선용 콘덴서 용량 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2024년2회\2024년2회_02.png"
-              alt="펌프 동력 계산, V결선 단상변압기 용량, 효율·역률·여유계수 적용
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2024년2회\2024년2회_02.png"
+                  alt="펌프 동력 계산, V결선 단상변압기 용량, 효율·역률·여유계수 적용
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년1회\2015년1회_08.png"
-              alt="스프링클러 펌프, 유량, 양정, 전동기 용량 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년1회\2015년1회_08.png"
+                  alt="스프링클러 펌프, 유량, 양정, 전동기 용량 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년2회\2020년2회_03.png"
-              alt="스프링클러설비, 펌프 소요동력 계산, 토출량, 양정, 효율, 전달계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년2회\2020년2회_03.png"
+                  alt="스프링클러설비, 펌프 소요동력 계산, 토출량, 양정, 효율, 전달계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년1회\2015년1회_13.png"
-              alt="제연설비, 송풍기, 보충량, 누설량, 전동기 용량
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년1회\2015년1회_13.png"
+                  alt="제연설비, 송풍기, 보충량, 누설량, 전동기 용량
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2024년3회\2024년3회_10.png"
-              alt="전동기 손실 계산: 철손·동손 분리, 효율 적용
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2024년3회\2024년3회_10.png"
+                  alt="전동기 손실 계산: 철손·동손 분리, 효율 적용
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2022년4회\2022년4회_08.png"
-              alt="스프링클러설비 펌프, 소요동력 계산, 토출량, 양정, 효율, 전달계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년4회\2022년4회_08.png"
+                  alt="스프링클러설비 펌프, 소요동력 계산, 토출량, 양정, 효율, 전달계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2023년1회\2023년1회_08.png"
-              alt="펌프용 전동기, 양수량·양정, 효율, 여유계수, 소요동력 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2023년1회\2023년1회_08.png"
+                  alt="펌프용 전동기, 양수량·양정, 효율, 여유계수, 소요동력 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년2회\2019년2회_07.png"
-              alt="양수펌프 설비, 전동기 용량·부하용량·변압기 용량 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년2회\2019년2회_07.png"
+                  alt="양수펌프 설비, 전동기 용량·부하용량·변압기 용량 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년2회\2019년2회_05.png"
-              alt="제연설비 송풍기, 풍량·풍압·효율·여유계수, 전동기 출력 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년2회\2019년2회_05.png"
+                  alt="제연설비 송풍기, 풍량·풍압·효율·여유계수, 전동기 출력 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년1회\2010년1회_05.png"
-              alt="스프링클러 펌프, 유량, 양정, 전동기 용량, 효율, 여유계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년1회\2010년1회_05.png"
+                  alt="스프링클러 펌프, 유량, 양정, 전동기 용량, 효율, 여유계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2021년1회\2021년1회_05.png"
-              alt="펌프용 전동기, 양수량, 양정, 효율, 여유계수, V결선, 변압기 용량
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2021년1회\2021년1회_05.png"
+                  alt="펌프용 전동기, 양수량, 양정, 효율, 여유계수, V결선, 변압기 용량
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년4회\2020년4회_02.png"
-              alt="펌프용 전동기, 양수량, 양정, 효율, 여유계수, V결선, 변압기 용량
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년4회\2020년4회_02.png"
+                  alt="펌프용 전동기, 양수량, 양정, 효율, 여유계수, V결선, 변압기 용량
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2012년1회\2012년1회_18.png"
-              alt="펌프 운전시간 계산 (전동기 효율·여유계수 포함)
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2012년1회\2012년1회_18.png"
+                  alt="펌프 운전시간 계산 (전동기 효율·여유계수 포함)
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년4회\2010년4회_11.png"
-              alt="저수조 양수 시간, 전동기 효율, 여유계수, 부피 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년4회\2010년4회_11.png"
+                  alt="저수조 양수 시간, 전동기 효율, 여유계수, 부피 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년3회\2020년3회_13.png"
-              alt="저수조, 소화용수 양수, 전동기 출력, 펌프 효율, 여유계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년3회\2020년3회_13.png"
+                  alt="저수조, 소화용수 양수, 전동기 출력, 펌프 효율, 여유계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2022년2회\2022년2회_07.png"
-              alt="스프링클러설비, 펌프 소요동력 계산, 토출량, 양정, 효율, 전달계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년2회\2022년2회_07.png"
+                  alt="스프링클러설비, 펌프 소요동력 계산, 토출량, 양정, 효율, 전달계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년4회\2018년4회_05.png"
-              alt="펌프 동력 계산, 효율·양정·전동기 용량
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년4회\2018년4회_05.png"
+                  alt="펌프 동력 계산, 효율·양정·전동기 용량
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년1회\2020년1회_12.png"
-              alt="스프링클러 펌프 소요동력 계산: 토출량, 양정, 효율, 전달계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년1회\2020년1회_12.png"
+                  alt="스프링클러 펌프 소요동력 계산: 토출량, 양정, 효율, 전달계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2013년2회\2013년2회_09.png"
-              alt="펌프 전동기 용량 계산, 양수량·양정·효율·여유계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2013년2회\2013년2회_09.png"
+                  alt="펌프 전동기 용량 계산, 양수량·양정·효율·여유계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2011년2회\2011년2회_06.png"
-              alt="저수조 양수 시간 계산 (전동기 효율, 여유계수 포함)
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년2회\2011년2회_06.png"
+                  alt="저수조 양수 시간 계산 (전동기 효율, 여유계수 포함)
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2012년4회\2012년4회_09.png"
-              alt="펌프 전동기 용량 계산, V결선 변압기 용량 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2012년4회\2012년4회_09.png"
+                  alt="펌프 전동기 용량 계산, V결선 변압기 용량 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2024년1회\2024년1회_04.png"
-              alt="펌프 동작시간 계산, 저수조 용량, 양정, 효율, 여유계수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2024년1회\2024년1회_04.png"
+                  alt="펌프 동작시간 계산, 저수조 용량, 양정, 효율, 여유계수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년2회\2010년2회_02.png"
-              alt="V결선, 단상변압기 용량 계산, 펌프 효율, 역률
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년2회\2010년2회_02.png"
+                  alt="V결선, 단상변압기 용량 계산, 펌프 효율, 역률
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2014년2회\2014년2회_13.png"
-              alt="제연설비 팬 전동기 용량 계산 (풍량·풍압·효율·여유계수)
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2014년2회\2014년2회_13.png"
+                  alt="제연설비 팬 전동기 용량 계산 (풍량·풍압·효율·여유계수)
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr />
-
-    <h2>선택된 이미지 주소</h2>
-    <textarea id="srcList" readonly></textarea>
-    <div class="button-container">
-      <button onclick="copyToClipboard()">복사</button>
-      <button onclick="clearAll()">삭제</button>
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+        </div>
+      </div>
     </div>
 
     <script>

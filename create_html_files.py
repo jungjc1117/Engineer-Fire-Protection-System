@@ -44,7 +44,7 @@ def create_html_files(file_names):
   </style>\n")
         f.write("</head>\n")
         f.write("<body>\n")
-        f.write(f"  <h1>{name}</h1>
+        f.write(f"  <h2>{name}</h2>
 
   <table border="1">
 <thead>

@@ -28,7 +28,23 @@
         box-sizing: border-box;
         resize: none;
       }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
 
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
       /* 하단 텍스트 박스 스타일 */
       #srcList {
         width: 100%;
@@ -49,890 +65,891 @@
     </style>
   </head>
   <body>
-    <h1>09 배선·계통도·가닥수 산출(자동화재탐지·수압개폐)</h1>
-
-    <table border="1">
-      <tbody>
-        <tr>
-          <td>
-            <img
-              src=".\2012년4회\2012년4회_10.png"
-              alt="수압개폐장치 배선 가닥수, 발신기 설치기준, 표시등 색상
+    <h2>09 배선·계통도·가닥수 산출(자동화재탐지·수압개폐)</h2>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  src=".\2012년4회\2012년4회_10.png"
+                  alt="수압개폐장치 배선 가닥수, 발신기 설치기준, 표시등 색상
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년1회\2017년1회_10.png"
-              alt="자동방화문설비, R type REPEATER, 배선명칭, 가닥수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년1회\2017년1회_10.png"
+                  alt="자동방화문설비, R type REPEATER, 배선명칭, 가닥수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년1회\2017년1회_01.png"
-              alt="배연창설비, 계통도, 전선 가닥수, HFIX 전선, 전선관 굵기
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년1회\2017년1회_01.png"
+                  alt="배연창설비, 계통도, 전선 가닥수, HFIX 전선, 전선관 굵기
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2014년1회\2014년1회_15.png"
-              alt="자동화재탐지설비 평면도 완성, 회로 수, 배선 가닥수, 전선관 굵기
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2014년1회\2014년1회_15.png"
+                  alt="자동화재탐지설비 평면도 완성, 회로 수, 배선 가닥수, 전선관 굵기
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년1회\2017년1회_15.png"
-              alt="자동화재탐지설비 평면도, 배선 가닥수, 관경, 발신기 내장 구성품
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년1회\2017년1회_15.png"
+                  alt="자동화재탐지설비 평면도, 배선 가닥수, 관경, 발신기 내장 구성품
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2014년2회\2014년2회_11.png"
-              alt="옥내소화전설비 계통도, 전선 가닥수 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2014년2회\2014년2회_11.png"
+                  alt="옥내소화전설비 계통도, 전선 가닥수 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년2회\2017년2회_04.png"
-              alt="옥내소화전설비 계통도, 배선 가닥수, 감시제어반 기능
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년2회\2017년2회_04.png"
+                  alt="옥내소화전설비 계통도, 배선 가닥수, 감시제어반 기능
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년2회\2017년2회_13.png"
-              alt="자동화재탐지설비 계통도, 층별 최소 배선 가닥수 산정
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년2회\2017년2회_13.png"
+                  alt="자동화재탐지설비 계통도, 층별 최소 배선 가닥수 산정
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2014년4회\2014년4회_05.png"
-              alt="수압개폐방식 옥내소화전·스프링클러 배선 가닥수, 전선관 길이, 발신기세트 구성
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2014년4회\2014년4회_05.png"
+                  alt="수압개폐방식 옥내소화전·스프링클러 배선 가닥수, 전선관 길이, 발신기세트 구성
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2012년4회\2012년4회_17.png"
-              alt="유도등 3선식 배선: A/B 가닥수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2012년4회\2012년4회_17.png"
+                  alt="유도등 3선식 배선: A/B 가닥수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2013년2회\2013년2회_18.png"
-              alt="MCC~펌프모터 배선, 관 종류, 전선 종류, 접지선 색상, 기동방식, 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2013년2회\2013년2회_18.png"
+                  alt="MCC~펌프모터 배선, 관 종류, 전선 종류, 접지선 색상, 기동방식, 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2013년4회\2013년4회_01.png"
-              alt="수압개폐장치, 가닥수 계산, 기동방식별 배선명칭, 소화전함 재질·두께
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2013년4회\2013년4회_01.png"
+                  alt="수압개폐장치, 가닥수 계산, 기동방식별 배선명칭, 소화전함 재질·두께
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년4회\2015년4회_05.png"
-              alt="자동화재탐지설비, 계통도, 전선 가닥수, 감지기 종류
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년4회\2015년4회_05.png"
+                  alt="자동화재탐지설비, 계통도, 전선 가닥수, 감지기 종류
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년4회\2015년4회_09.png"
-              alt="이산화탄소 소화설비, 간선계통도, 배선 가닥수, 배선 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년4회\2015년4회_09.png"
+                  alt="이산화탄소 소화설비, 간선계통도, 배선 가닥수, 배선 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년2회\2017년2회_15.png"
-              alt="평면도 기반 루프식 배선, 그림기호 명칭, 전선 소요량 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년2회\2017년2회_15.png"
+                  alt="평면도 기반 루프식 배선, 그림기호 명칭, 전선 소요량 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2016년2회\2016년2회_01.png"
-              alt="제연설비 계통도, 댐퍼 방식, 배선수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2016년2회\2016년2회_01.png"
+                  alt="제연설비 계통도, 댐퍼 방식, 배선수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2016년2회\2016년2회_05.png"
-              alt="프리액션밸브, 간선계통도, 배선 가닥수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2016년2회\2016년2회_05.png"
+                  alt="프리액션밸브, 간선계통도, 배선 가닥수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2022년4회\2022년4회_04.png"
-              alt="이산화탄소소화설비, 배선 가닥수, 배선 용도, 병렬 접속 제외
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년4회\2022년4회_04.png"
+                  alt="이산화탄소소화설비, 배선 가닥수, 배선 용도, 병렬 접속 제외
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년2회\2015년2회_07.png"
-              alt="배연창설비, 계통도, 배선수, 배선 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년2회\2015년2회_07.png"
+                  alt="배연창설비, 계통도, 배선수, 배선 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2014년1회\2014년1회_03.png"
-              alt="프리액션 스프링클러 계통도, 배선 가닥수, 배선내역
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2014년1회\2014년1회_03.png"
+                  alt="프리액션 스프링클러 계통도, 배선 가닥수, 배선내역
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년2회\2015년2회_01.png"
-              alt="자동화재탐지설비, 평면도, 전선 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년2회\2015년2회_01.png"
+                  alt="자동화재탐지설비, 평면도, 전선 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2022년2회\2022년2회_09.png"
-              alt="옥내소화전설비, 수압개폐장치, 발신기세트, 전선 가닥수, 종단저항 설치기준, 전로저항, 정격전압 비율
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년2회\2022년2회_09.png"
+                  alt="옥내소화전설비, 수압개폐장치, 발신기세트, 전선 가닥수, 종단저항 설치기준, 전로저항, 정격전압 비율
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년1회\2015년1회_07.png"
-              alt="자동화재탐지설비, 간선계통도, 전선 용도 및 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년1회\2015년1회_07.png"
+                  alt="자동화재탐지설비, 간선계통도, 전선 용도 및 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2023년2회\2023년2회_13.png"
-              alt="자동화재탐지설비 + 프리액션 스프링클러 계통도, 배선 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2023년2회\2023년2회_13.png"
+                  alt="자동화재탐지설비 + 프리액션 스프링클러 계통도, 배선 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년1회\2015년1회_06.png"
-              alt="프리액션 스프링클러, 계통도, 가닥수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년1회\2015년1회_06.png"
+                  alt="프리액션 스프링클러, 계통도, 가닥수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2013년2회\2013년2회_07.png"
-              alt="수압개폐장치, 가닥수 계산, 수신기 회로 수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2013년2회\2013년2회_07.png"
+                  alt="수압개폐장치, 가닥수 계산, 수신기 회로 수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2022년4회\2022년4회_17.png"
-              alt="할론소화설비 결선도, 전선 용도 명칭, 배선 굵기(2.5㎟)
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년4회\2022년4회_17.png"
+                  alt="할론소화설비 결선도, 전선 용도 명칭, 배선 굵기(2.5㎟)
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2015년4회\2015년4회_07.png"
-              alt="옥내소화전설비, 계통도, 배선수, 배선 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2015년4회\2015년4회_07.png"
+                  alt="옥내소화전설비, 계통도, 배선수, 배선 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2023년4회\2023년4회_04.png"
-              alt="자동화재탐지설비 도면, 로크너트·부싱 수량, 전선 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2023년4회\2023년4회_04.png"
+                  alt="자동화재탐지설비 도면, 로크너트·부싱 수량, 전선 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2013년1회\2013년1회_11.png"
-              alt="준비작동식 스프링클러설비: 가닥수, 기기명칭·기능, 배선내역, 종단저항 수, 전선 종류·굵기
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2013년1회\2013년1회_11.png"
+                  alt="준비작동식 스프링클러설비: 가닥수, 기기명칭·기능, 배선내역, 종단저항 수, 전선 종류·굵기
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2022년4회\2022년4회_09.png"
-              alt="할론소화설비, 평면도 작성, 전선 가닥수, 배선 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년4회\2022년4회_09.png"
+                  alt="할론소화설비, 평면도 작성, 전선 가닥수, 배선 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2022년1회\2022년1회_01.png"
-              alt="자동화재탐지설비, 옥내소화전설비, 수압개폐장치, 전선 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년1회\2022년1회_01.png"
+                  alt="자동화재탐지설비, 옥내소화전설비, 수압개폐장치, 전선 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2011년2회\2011년2회_16.png"
-              alt="자동화재탐지+프리액션설비 배선 가닥수, 배선 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년2회\2011년2회_16.png"
+                  alt="자동화재탐지+프리액션설비 배선 가닥수, 배선 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년1회\2019년1회_07.png"
-              alt="제연설비 계통도, 댐퍼 종류, 배선 가닥수, 설치높이 기준
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년1회\2019년1회_07.png"
+                  alt="제연설비 계통도, 댐퍼 종류, 배선 가닥수, 설치높이 기준
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년1회\2019년1회_18.png"
-              alt="자동화재탐지설비 계통도, 배선 가닥수, 종단저항 개수, 기기명칭
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년1회\2019년1회_18.png"
+                  alt="자동화재탐지설비 계통도, 배선 가닥수, 종단저항 개수, 기기명칭
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년2회\2019년2회_09.png"
-              alt="습식 스프링클러설비, 계통도, 배선 가닥수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년2회\2019년2회_09.png"
+                  alt="습식 스프링클러설비, 계통도, 배선 가닥수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2011년1회\2011년1회_10.png"
-              alt="할론소화설비, 배선 가닥수, 배선 용도, 구역 추가 시 전선명칭
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년1회\2011년1회_10.png"
+                  alt="할론소화설비, 배선 가닥수, 배선 용도, 구역 추가 시 전선명칭
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2021년1회\2021년1회_16.png"
-              alt="할론소화설비, 수동조작함, 제어반, 전선명칭, 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2021년1회\2021년1회_16.png"
+                  alt="할론소화설비, 수동조작함, 제어반, 전선명칭, 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년4회\2017년4회_04.png"
-              alt="할론소화설비 계통도, 전선명칭, 전선 가닥수
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년4회\2017년4회_04.png"
+                  alt="할론소화설비 계통도, 전선명칭, 전선 가닥수
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년2회\2018년2회_09.png"
-              alt="이산화탄소 소화설비, 간선계통도, 배선 가닥수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년2회\2018년2회_09.png"
+                  alt="이산화탄소 소화설비, 간선계통도, 배선 가닥수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2019년4회\2019년4회_12.png"
-              alt="프리액션 스프링클러설비, 계통도, 배선 가닥수·내역
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2019년4회\2019년4회_12.png"
+                  alt="프리액션 스프링클러설비, 계통도, 배선 가닥수·내역
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년1회\2020년1회_14.png"
-              alt="3로 스위치 회로 구성: 그림기호 명칭, 배선 가닥수, 실제배선도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년1회\2020년1회_14.png"
+                  alt="3로 스위치 회로 구성: 그림기호 명칭, 배선 가닥수, 실제배선도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년4회\2010년4회_01.png"
-              alt="자동화재탐지설비, 평면도, 가닥수 산정, 품셈표, 노무비 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년4회\2010년4회_01.png"
+                  alt="자동화재탐지설비, 평면도, 가닥수 산정, 품셈표, 노무비 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년2회\2010년2회_10.png"
-              alt="자동화재탐지설비, 가닥수 산정, 공통선 분리
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년2회\2010년2회_10.png"
+                  alt="자동화재탐지설비, 가닥수 산정, 공통선 분리
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년2회\2010년2회_05.png"
-              alt="프리액션 스프링클러, 배선 가닥수, 공통선 분리
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년2회\2010년2회_05.png"
+                  alt="프리액션 스프링클러, 배선 가닥수, 공통선 분리
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년5회\2020년5회_12.png"
-              alt="자동화재탐지설비 평면도, 배선 가닥수 표기, 슬래브 매입배관
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년5회\2020년5회_12.png"
+                  alt="자동화재탐지설비 평면도, 배선 가닥수 표기, 슬래브 매입배관
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년1회\2010년1회_16.png"
-              alt="자동화재탐지설비, 평면도, 배관·배선 물량 산출
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년1회\2010년1회_16.png"
+                  alt="자동화재탐지설비, 평면도, 배관·배선 물량 산출
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2010년1회\2010년1회_03.png"
-              alt="수압개폐장치, 옥내소화전함, 스프링클러, 가닥수, 경계구역, 회로선, 경종선
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2010년1회\2010년1회_03.png"
+                  alt="수압개폐장치, 옥내소화전함, 스프링클러, 가닥수, 경계구역, 회로선, 경종선
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2020년1회\2020년1회_08.png"
-              alt="자동화재탐지 + 준비작동식 스프링클러 계통도: 배선 가닥수, 기호별 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년1회\2020년1회_08.png"
+                  alt="자동화재탐지 + 준비작동식 스프링클러 계통도: 배선 가닥수, 기호별 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2011년4회\2011년4회_06.png"
-              alt="자동화재탐지설비 평면도, 전선 가닥수 계산
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년4회\2011년4회_06.png"
+                  alt="자동화재탐지설비 평면도, 전선 가닥수 계산
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년1회\2018년1회_03.png"
-              alt="수압개폐장치, 전선 가닥수, PB함 기기 구성
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년1회\2018년1회_03.png"
+                  alt="수압개폐장치, 전선 가닥수, PB함 기기 구성
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2012년1회\2012년1회_15.png"
-              alt="자동방화문설비 결선도·계통도, 배선명칭·가닥수·용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2012년1회\2012년1회_15.png"
+                  alt="자동방화문설비 결선도·계통도, 배선명칭·가닥수·용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년2회\2018년2회_04.png"
-              alt="준비작동식 유수검지장치, 배선계통도, 배선 가닥수 및 용도
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년2회\2018년2회_04.png"
+                  alt="준비작동식 유수검지장치, 배선계통도, 배선 가닥수 및 용도
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년4회\2017년4회_06.png"
-              alt="옥내소화전함, 우선경보방식, 배선 가닥수, 회로공통선
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년4회\2017년4회_06.png"
+                  alt="옥내소화전함, 우선경보방식, 배선 가닥수, 회로공통선
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2011년4회\2011년4회_14.png"
-              alt="루프식 배선, 감지기/발신기/수신기 기호 해석, 전선 소요량
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년4회\2011년4회_14.png"
+                  alt="루프식 배선, 감지기/발신기/수신기 기호 해석, 전선 소요량
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2017년4회\2017년4회_11.png"
-              alt="배연창설비 계통도, 배선수 및 용도, 솔레노이드식
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년4회\2017년4회_11.png"
+                  alt="배연창설비 계통도, 배선수 및 용도, 솔레노이드식
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년1회\2018년1회_13.png"
-              alt="자동화재탐지설비 계통도, 전선 가닥수, 감지기 종류
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년1회\2018년1회_13.png"
+                  alt="자동화재탐지설비 계통도, 전선 가닥수, 감지기 종류
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img
-              src=".\2018년1회\2018년1회_07.png"
-              alt="배연창설비 계통도, 배선수 및 용도, 솔레노이드 방식
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2018년1회\2018년1회_07.png"
+                  alt="배연창설비 계통도, 배선수 및 용도, 솔레노이드 방식
 "
-            />
-          </td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr />
-
-    <h2>선택된 이미지 주소</h2>
-    <textarea id="srcList" readonly></textarea>
-    <div class="button-container">
-      <button onclick="copyToClipboard()">복사</button>
-      <button onclick="clearAll()">삭제</button>
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+        </div>
+      </div>
     </div>
 
     <script>

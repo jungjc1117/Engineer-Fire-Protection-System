@@ -28,7 +28,23 @@
         box-sizing: border-box;
         resize: none;
       }
+      .container {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100vh; /* 뷰포트 높이의 80%로 설정하여 스크롤이 생기도록 함 */
+      }
 
+      .container1 {
+        width: 80%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box; /* 패딩과 보더가 너비에 포함되도록 설정 */
+      }
+
+      .container2 {
+        width: 20%;
+        overflow: auto; /* 내용이 넘칠 때 스크롤 */
+        box-sizing: border-box;
+      }
       /* 하단 텍스트 박스 스타일 */
       #srcList {
         width: 100%;
@@ -49,182 +65,201 @@
     </style>
   </head>
   <body>
-    <h1>2022년2회</h1>
-
-    <table border="1">
-      <tbody>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_01.png" alt="이미지 1" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_02.png" alt="이미지 2" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_03.png" alt="이미지 3" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_04.png" alt="이미지 4" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_05.png" alt="이미지 5" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_06.png" alt="이미지 6" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_07.png" alt="이미지 7" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_08.png" alt="이미지 8" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_09.png" alt="이미지 9" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_10.png" alt="이미지 10" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_11.png" alt="이미지 11" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_12.png" alt="이미지 12" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_13.png" alt="이미지 13" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_14.png" alt="이미지 14" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_15.png" alt="이미지 15" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_16.png" alt="이미지 16" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_17.png" alt="이미지 17" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td><img src=".\2022년2회\2022년2회_18.png" alt="이미지 18" /></td>
-          <td>
-            <textarea
-              class="image-content"
-              oninput="updateSrcList()"
-            ></textarea>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <hr />
-
-    <h2>선택된 이미지 주소</h2>
-    <textarea id="srcList" readonly></textarea>
-    <div class="button-container">
-      <button onclick="copyToClipboard()">복사</button>
-      <button onclick="clearAll()">삭제</button>
+    <h2>2022년2회</h2>
+    <div class="container">
+      <div class="container1">
+        <table border="1">
+          <tbody>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_01.png" alt="이미지 1" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_02.png" alt="이미지 2" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_03.png" alt="이미지 3" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_04.png" alt="이미지 4" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_05.png" alt="이미지 5" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_06.png" alt="이미지 6" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_07.png" alt="이미지 7" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_08.png" alt="이미지 8" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><img src=".\2022년2회\2022년2회_09.png" alt="이미지 9" /></td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_10.png" alt="이미지 10" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_11.png" alt="이미지 11" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_12.png" alt="이미지 12" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_13.png" alt="이미지 13" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_14.png" alt="이미지 14" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_15.png" alt="이미지 15" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_16.png" alt="이미지 16" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_17.png" alt="이미지 17" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src=".\2022년2회\2022년2회_18.png" alt="이미지 18" />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container2">
+        <textarea id="srcList" readonly></textarea>
+        <div class="button-container">
+          <button onclick="copyToClipboard()">복사</button>
+          <button onclick="clearAll()">삭제</button>
+        </div>
+      </div>
     </div>
 
     <script>

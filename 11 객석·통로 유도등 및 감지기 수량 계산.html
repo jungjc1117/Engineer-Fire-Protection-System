@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2024년3회</title>
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2024년3회</h1>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_07.png"
+              alt="P형 발신기세트 배선길이 계산, 감지기 수량 계산(2종, 5m 높이), 전선관·전선 물량 산출
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년1회\2010년1회_17.png"
+              alt="연기감지기 설치 여부, 최소 수량, 폐쇄형 스프링클러헤드
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_02.png"
+              alt="평면도 기반 감지기 수량 계산, 정온식 스포트형 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년2회\2010년2회_08.png"
+              alt="감지기 수량 산출, 평면도 배선도 작성
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_05.png"
+              alt="비상조명등 수량 계산 (조도, 조명률, 감광보상률)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년2회\2011년2회_01.png"
+              alt="객석유도등 수량 계산, 유도등 배치도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년2회\2014년2회_07.png"
+              alt="준비작동식 스프링클러 감지기 수량 계산, 배선도 작성
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_14.png"
+              alt="연기감지기 최소 수량 계산 (면적/설치기준 적용)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_04.png"
+              alt="비상콘센트 간선 허용전류 계산, 콘센트함 수량
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년4회\2023년4회_14.png"
+              alt="감지기 수량 계산, 차동식·연기감지기, 내화구조, 보행거리 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년2회\2023년2회_18.png"
+              alt="축전지설비 계산, 셀 수량, 설페이션 현상, 수소가스 발생
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_13.png"
+              alt="비상콘센트 수량 계산 (지하3층~지상14층, 층별 2개씩)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_18.png"
+              alt="차동식 스포트형 감지기 수량 계산: 내화구조, 천장높이 4m, 바닥면적 700m² 기준
+
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년1회\2018년1회_10.png"
+              alt="객석유도등 수량 산출, 통로 길이 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년1회\2015년1회_12.png"
+              alt="객석유도등, 통로 길이, 최소 수량 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년1회\2015년1회_05.png"
+              alt="배선도면, 그림기호 명칭, 배선가닥수, 박스 수량, 부싱
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_09.png"
+              alt="객석유도등 수량 계산, 통로 길이 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년1회\2022년1회_11.png"
+              alt="연기감지기 2종/3종, 복도 설치 간격, 도시기호 작성
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년2회\2016년2회_06.png"
+              alt="감지기 수량 산정, 평면도 해석, 배선수 명시
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년2회\2020년2회_17.png"
+              alt="객석유도등 설치 수량 계산, 통로 길이, 설치 간격
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년2회\2018년2회_13.png"
+              alt="통로유도등 설치 수량 산정, 평면도 표시, 복도 길이 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년1회\2022년1회_06.png"
+              alt="객석유도등, 통로 길이 60m, 설치 수량 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년2회\2018년2회_05.png"
+              alt="평면도 기반 감지기 수량 산정, 배선도 작성, 가닥수 표기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년4회\2020년4회_12.png"
+              alt="객석유도등, 통로 길이 50m, 설치 개수 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년1회\2023년1회_12.png"
+              alt="단독경보형 감지기, 설치 수량 계산, 조작스위치 높이, 증폭기 정의
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년4회\2014년4회_12.png"
+              alt="감지기·발신기·수신기 수량 산정, 종단저항 개수, 계통도 작성
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년2회\2018년2회_01.png"
+              alt="배선도면 해석, 그림기호 명칭, 배선 가닥수, 박스 수량, 부싱 수량
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>선택된 이미지 주소</h2>
+    <textarea id="srcList" readonly></textarea>
+    <div class="button-container">
+      <button onclick="copyToClipboard()">복사</button>
+      <button onclick="clearAll()">삭제</button>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          const src = image.getAttribute("src");
+          const text = contentTextarea.value.trim();
+
+          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          if (text !== "") {
+            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+      }
+
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        // 모든 textarea 초기화
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+
+        // 하단 텍스트 박스 초기화
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+    </script>
+  </body>
+</html>

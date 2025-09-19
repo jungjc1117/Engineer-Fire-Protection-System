@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2024년3회</title>
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2024년3회</h1>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              src=".\2022년1회\2022년1회_04.png"
+              alt="유도등, 3선식 배선, 점멸기 설치 기준 5가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년1회\2022년1회_05.png"
+              alt="특정소방대상물, 자동화재탐지설비 설치 기준, 연면적 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_09.png"
+              alt="금속관공사 조건: 비닐전선 제외, 단심전선 금지, 꼬임 방지, 부싱 사용
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_10.png"
+              alt="시퀀스회로 도면 완성, 푸시버튼, 전자접촉기, 램프 동작 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_10.png"
+              alt="무선통신보조설비, 무반사 종단저항, 설치 목적(전자파 반사 방지)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_08.png"
+              alt="감시제어반·동력제어반 설치 기준, 특정소방대상물 조건, 가압송수장치 종류
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년4회\2021년4회_09.png"
+              alt="내화배선, 공사방법, 매설 깊이, 배선전용실, 격벽 설치 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_01.png"
+              alt="유도전동기 제어회로, 자기유지, RL·GL 램프 동작, 열동계전기 작동 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년4회\2021년4회_06.png"
+              alt="유도등, 3선식 배선, 점멸기 설치 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_04.png"
+              alt="단독경보형 감지기 설치기준: 바닥면적 기준(150m²), 공기 유통 시 실수 기준, 계단실 천장, 제품검사
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_16.png"
+              alt="축적형 수신기 설치 장소, 연기·먼지 발생, 환기 불량, 실내면적 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년1회\2024년1회_15.png"
+              alt="우선경보방식, 층별 경보 대상, 공동주택 제외, 음향장치 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_14.png"
+              alt="자동화재탐지설비 설치기준, 특정소방대상물, 연면적/바닥면적 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년2회\2023년2회_03.png"
+              alt="특정소방대상물, 자동화재탐지설비 설치 기준, 연면적 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년1회\2021년1회_12.png"
+              alt="비상콘센트설비, 설치 대상 특정소방대상물
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년2회\2024년2회_11.png"
+              alt="가스누설경보기 설치 대상: 공동주택, 노유자시설, 숙박시설, 판매시설, 업무시설
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년4회\2023년4회_15.png"
+              alt="중계기 회로, 최대전력 조건, 부하저항 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년4회\2023년4회_18.png"
+              alt="비상조명등 설치 기준, 특정소방대상물 2종(11층 이상, 지하상가 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년1회\2024년1회_06.png"
+              alt="누전경보기 설치 기준, 정격전류 기준, 1급/2급/3급 구분
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년1회\2024년1회_08.png"
+              alt="단독경보형감지기 설치 기준, 바닥면적 기준, 건전지 교환, 제품검사
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년1회\2023년1회_03.png"
+              alt="시각경보기 설치 대상, 특정소방대상물 3가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년4회\2020년4회_18.png"
+              alt="3상 유도전동기, 전전압 기동회로, 조작회로 구성, 표시등·부저 동작 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년4회\2017년4회_13.png"
+              alt="객석유도등 설치 예외 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년2회\2014년2회_08.png"
+              alt="객석유도등 설치 제외 조건 2가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년4회\2010년4회_16.png"
+              alt="경보 우선층 표시, 연면적 기준, 층별 경보표시
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년1회\2011년1회_06.png"
+              alt="공통선 시험방법, 가부판정 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_12.png"
+              alt="가요전선관공사 사용 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년2회\2011년2회_02.png"
+              alt="이온화식 연기감지기 구조, 방사선원(아메리슘241), 설치 이격거리
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년2회\2011년2회_07.png"
+              alt="소방용 케이블 이격거리, 불연성 격벽 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년1회\2019년1회_12.png"
+              alt="유도전동기 기동·정지회로, 자기유지, 과부하 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년2회\2016년2회_07.png"
+              alt="금속관 공사 기준, 굴곡 개소, 풀박스 설치 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_16.png"
+              alt="유도등 점등 조건, 3선식 배선, 자동·수동 점등 상황
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_11.png"
+              alt="유도전동기 정·역회전 회로, 자기유지, 인터록 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년2회\2011년2회_12.png"
+              alt="휴대용비상조명등 설치 대상 (숙박시설, 수용인원 기준)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_07.png"
+              alt="Y-Δ 기동회로 완성, 램프 점등 조건, MCCB·THR 명칭
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_08.png"
+              alt="Y-△ 기동회로, 램프 점등 조건, MCCB·THR 명칭
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년2회\2011년2회_17.png"
+              alt="배연창설비 계통도 해석, 동작 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년4회\2011년4회_04.png"
+              alt="금속관공사 기준, 굴곡개소, 풀박스 설치 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년2회\2016년2회_10.png"
+              alt="양수펌프 제어회로, 자동·수동 운전 조건, 접점기호
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년4회\2011년4회_05.png"
+              alt="유도등 점등 기준 5가지 (정전, 발신기 작동 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_04.png"
+              alt="이온화식 연기감지기 구조, 아메리슘241, α선, 이격거리 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년4회\2011년4회_09.png"
+              alt="축적기능 없는 감지기 사용 조건 3가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년4회\2011년4회_12.png"
+              alt="무선통신보조설비 임피던스 매칭, 접속단자 설치 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년4회\2016년4회_13.png"
+              alt="릴레이 제어회로, 타임차트 해석, 램프 작동 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년2회\2018년2회_03.png"
+              alt="비상콘센트설비, 전원회로 기준, 차단기·충전부·전용회로 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년1회\2017년1회_03.png"
+              alt="금속관공사, 접지공사 종류, 사용전압 기준, 관 길이 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년1회\2017년1회_11.png"
+              alt="비상방송설비, 경종 정지회로, 계전기 동작 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년1회\2018년1회_06.png"
+              alt="착공신고 대상 공사, 교체·보수 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년1회\2018년1회_05.png"
+              alt="비상콘센트설비 설치 대상, 특정소방대상물 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년1회\2018년1회_04.png"
+              alt="휴대용 비상조명등 설치 기준, 수용인원 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년2회\2012년2회_14.png"
+              alt="축적형 수신기 설치 필요 장소 3가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년2회\2019년2회_15.png"
+              alt="금속관공사 기준, 굴곡 개소, 풀박스 설치 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년2회\2019년2회_16.png"
+              alt="불꽃감지기 설치기준, 감시거리·시야각·방수형 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년4회\2017년4회_02.png"
+              alt="시각경보기 설치 대상, 특정소방대상물
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년4회\2010년4회_06.png"
+              alt="소방용 케이블, 이격거리, 불연성 격벽, 배선전용실 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_11.png"
+              alt="무반사 종단저항 설치 목적
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_13.png"
+              alt="펌프모터 제어회로, 플로트스위치, 자동·수동 동작 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년1회\2014년1회_13.png"
+              alt="금속관공사 기준 (굴곡 반지름, 풀박스 설치 조건)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_13.png"
+              alt="배연창설비 설치 기준: 층수, 구동방식, 개소 수, 유효면적
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년4회\2020년4회_15.png"
+              alt="우선경보방식, 지하·지상층 경보 우선순위, 연면적 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_10.png"
+              alt="유도등 점등 조건 3가지 (3선식 회로)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년4회\2014년4회_02.png"
+              alt="축적기능 감지기 사용 조건 vs 비축적기능 사용 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년3회\2020년3회_17.png"
+              alt="특정소방대상물, 화재 발생 시 경보 우선층, 지상/지하층 판단
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년1회\2010년1회_11.png"
+              alt="유도등, 점멸기 설치 기준, 점등 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년1회\2014년1회_05.png"
+              alt="유도등 점등 조건 5가지 (정전, 발신기 작동 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년3회\2020년3회_06.png"
+              alt="휴대용 비상조명등, 특정소방대상물, 수용인원 기준, 설치대상
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년2회\2010년2회_14.png"
+              alt="플롯스위치 제어회로, 자동/수동 동작 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>선택된 이미지 주소</h2>
+    <textarea id="srcList" readonly></textarea>
+    <div class="button-container">
+      <button onclick="copyToClipboard()">복사</button>
+      <button onclick="clearAll()">삭제</button>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          const src = image.getAttribute("src");
+          const text = contentTextarea.value.trim();
+
+          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          if (text !== "") {
+            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+      }
+
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        // 모든 textarea 초기화
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+
+        // 하단 텍스트 박스 초기화
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+    </script>
+  </body>
+</html>

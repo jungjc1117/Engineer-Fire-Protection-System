@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2024년3회</title>
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2024년3회</h1>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              src=".\2010년2회\2010년2회_18.png"
+              alt="비상방송설비, 음량조정기 결선도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년1회\2011년1회_09.png"
+              alt="비상방송설비, 음량조정기 배선, 조작스위치 높이, 경보 우선층
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년1회\2022년1회_16.png"
+              alt="비상방송설비, 확성기 회로, 음량조정기 결선도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년1회\2020년1회_09.png"
+              alt="비상방송설비 음향장치 작동 기준: 정격전압의 80% 이상
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년4회\2014년4회_04.png"
+              alt="비상방송설비 음성입력 기준, 방송 개시 소요시간, 경보방식 및 층별 경보층
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년1회\2023년1회_16.png"
+              alt="비상방송설비, 음량조절기 정의, 확성기 설치거리, 배선 방식, 자동방송 시간
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년5회\2020년5회_01.png"
+              alt="비상방송설비, 확성기 음성입력, 음량조정기 배선, 조작스위치 높이, 수평거리, 수위실 설치장소
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_06.png"
+              alt="비상방송설비, 우선경보층 설정 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년1회\2014년1회_10.png"
+              alt="비상방송설비 설치기준 (입력, 배선, 소요시간, 거리)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_11.png"
+              alt="비상방송설비, 확성기 회로, 음량조정기 결선도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_10.png"
+              alt="비상방송설비, 자동방송 개시시간, 경보층, 확성기 출력, 조작스위치 높이, 정격전압
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_13.png"
+              alt="비상방송설비 설치기준, 확성기 입력·배선 방식
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_15.png"
+              alt="비상방송설비 기준, 확성기 음성입력, 수평거리, 음량조정기 배선, 조작스위치 높이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_11.png"
+              alt="비상방송설비, 우선경보방식, 층수 기준, 경보층 구분
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_16.png"
+              alt="비상방송설비 설치기준 (입력, 배선, 소요시간, 스위치 높이)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년2회\2019년2회_08.png"
+              alt="비상방송설비, 확성기 입력, 경보방식, 경보층, 방송 개시시간
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_11.png"
+              alt="음량조정기 결선도 (비상방송 확성기 회로)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_07.png"
+              alt="비상방송설비 설치기준: 경보방식, 확성기 위치, 조작스위치 높이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년2회\2017년2회_07.png"
+              alt="비상방송설비 우선경보방식, 층별 배선수 및 용도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년2회\2012년2회_12.png"
+              alt="비상방송설비 계통도, 층별 배선수 및 용도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_11.png"
+              alt="비상방송설비, 용어 정의: 음량조절기, 확성기, 증폭기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년1회\2019년1회_11.png"
+              alt="비상방송설비 결선도, 음량조정기, 증폭기, 확성기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>선택된 이미지 주소</h2>
+    <textarea id="srcList" readonly></textarea>
+    <div class="button-container">
+      <button onclick="copyToClipboard()">복사</button>
+      <button onclick="clearAll()">삭제</button>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          const src = image.getAttribute("src");
+          const text = contentTextarea.value.trim();
+
+          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          if (text !== "") {
+            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+      }
+
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        // 모든 textarea 초기화
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+
+        // 하단 텍스트 박스 초기화
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+    </script>
+  </body>
+</html>

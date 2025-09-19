@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2024년3회</title>
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2024년3회</h1>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              src=".\2022년1회\2022년1회_14.png"
+              alt="자동화재탐지설비, 경계구역 수 계산 (도면 기반)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년4회\2017년4회_14.png"
+              alt="감지기 설치수량 산정, 경계구역 계산, 차동식 스포트형
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년1회\2022년1회_12.png"
+              alt="평면도 기반 감지기 수량 계산, 내화구조, 부착높이, 경계구역 수
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년2회\2016년2회_11.png"
+              alt="경계구역 수 계산, 수신기 형식, 감지기 설치 위치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년4회\2010년4회_17.png"
+              alt="자동화재탐지설비, 경계구역 수 산정, 수신기 회로 수
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_15.png"
+              alt="지하구 자동화재탐지설비, 경계구역 수, 감지기 종류(불꽃·정온식 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년1회\2016년1회_04.png"
+              alt="경계구역 산정, 층별 면적, 수신기 회로수 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년2회\2020년2회_09.png"
+              alt="경계구역 설정기준, 면적, 층수, 한 변의 길이, 제연설비
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_14.png"
+              alt="자동화재탐지설비, 경계구역 수 계산, 수신기 형식, 계단·엘리베이터 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_03.png"
+              alt="자동화재탐지설비, 경계구역 수 계산, 평면도 해석
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년2회\2024년2회_06.png"
+              alt="감지기 수량 계산(내화구조, 부착높이 4.5m), 경계구역 수 산정
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_05.png"
+              alt="차동식 스포트형 감지기 수량 계산, 경계구역 선정
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_12.png"
+              alt="경계구역 수 계산, 수신기 형식, 계단·권상기실 감지기 설치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년4회\2021년4회_08.png"
+              alt="자동화재탐지설비, 경계구역 설정, 면적 기준, 수신기 회로 수
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년1회\2018년1회_14.png"
+              alt="공통선 시험 목적 및 방법, 경계구역 수 확인
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_01.png"
+              alt="외기 개방 장소, 경계구역 제외 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년2회\2012년2회_07.png"
+              alt="경계구역 수 계산, 감지기 수량 계산 (건물 구조 조건 포함)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년4회\2011년4회_17.png"
+              alt="자동화재탐지설비 경계구역 수, 감지기 수, 계단 감지기 설치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_06.png"
+              alt="지하구 경계구역 수 계산, 감지기 종류 및 설치 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년4회\2013년4회_04.png"
+              alt="차동식 스포트형 감지기 수량 계산, 경계구역 산정
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년1회\2021년1회_04.png"
+              alt="차동식 스포트형 감지기, 설치 수량 계산, 경계구역 수
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_13.png"
+              alt="평면도 기반 감지기 수량 계산, 내화구조, 차동식 스포트형 감지기, 경계구역 수
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년4회\2011년4회_10.png"
+              alt="주차장 경계구역 면적 계산 (외기 개방 조건)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년1회\2021년1회_08.png"
+              alt="용어 정의, 경계구역, 감지기, 시각경보장치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년2회\2023년2회_02.png"
+              alt="자동화재탐지설비, 경계구역 수 계산, 면적 기준, 도면 해석
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>선택된 이미지 주소</h2>
+    <textarea id="srcList" readonly></textarea>
+    <div class="button-container">
+      <button onclick="copyToClipboard()">복사</button>
+      <button onclick="clearAll()">삭제</button>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          const src = image.getAttribute("src");
+          const text = contentTextarea.value.trim();
+
+          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          if (text !== "") {
+            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+      }
+
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        // 모든 textarea 초기화
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+
+        // 하단 텍스트 박스 초기화
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+    </script>
+  </body>
+</html>

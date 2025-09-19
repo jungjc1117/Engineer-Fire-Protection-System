@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2024년3회</title>
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2024년3회</h1>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              src=".\2015년2회\2015년2회_06.png"
+              alt="비상전원 종류별 적용 설비 (축전지, 수전, 자가발전)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년2회\2017년2회_05.png"
+              alt="옥내소화전설비 비상전원 설치기준 5가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_17.png"
+              alt="옥내소화전 비상전원 설치기준 5가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_03.png"
+              alt="옥내소화전설비, 블록선도, 내화·내열·일반배선 구분
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년2회\2023년2회_06.png"
+              alt="소화설비별 비상전원 종류, 자가발전설비, 축전지설비, 수전설비
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_12.png"
+              alt="교차회로방식 적용 설비 종류 5가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년1회\2019년1회_03.png"
+              alt="옥내소화전설비 비상전원 설치기준, 작동시간, 인입개폐기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년4회\2017년4회_01.png"
+              alt="비상전원 배선기준, 분말소화설비, 내화/내열/일반배선
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년4회\2017년4회_03.png"
+              alt="소화설비별 비상전원 종류, 자가발전/축전지/수전설비
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년1회\2016년1회_01.png"
+              alt="비상콘센트, 비상전원 면제 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_11.png"
+              alt="비상조명등 설치기준, 점등확인장치, 예비전원 종류·시간
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년4회\2010년4회_12.png"
+              alt="비상전원 종류별 적용 설비 (축전지, 수전, 자가발전)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년2회\2014년2회_04.png"
+              alt="비상콘센트설비 비상전원 종류, 절연저항 측정방법
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_03.png"
+              alt="옥내소화전설비, 비상전원 종류
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년2회\2024년2회_09.png"
+              alt="옥내소화전설비 비상전원 설치기준 3가지: 자동절환, 20분 이상, 전용회로
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_05.png"
+              alt="비상조명등, 비상전원 작동시간(20분/60분), 특정소방대상물 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년1회\2023년1회_11.png"
+              alt="비상조명등, 점검스위치, 축전지, 예비전원 충전장치, 작동시간 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년2회\2011년2회_04.png"
+              alt="무선통신보조설비 설치기준 (지지금구, 임피던스, 비상전원 작동시간)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년1회\2019년1회_09.png"
+              alt="옥내소화전설비 비상전원 종류, 자가발전·축전지·전기저장장치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_06.png"
+              alt="옥내소화전설비 비상전원 작동시간(20분), 실내 설치 시 환기설비, 저압수전 분기점
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년2회\2020년2회_04.png"
+              alt="옥내소화전설비, 비상전원 설치기준, 연면적, 지하층, 자가발전설비, 작동시간
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년4회\2023년4회_08.png"
+              alt="무선통신보조설비, 증폭기 전원·표시등·비상전원 작동시간
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년2회\2019년2회_12.png"
+              alt="자동절환스위치, 비상전원 공급용 스위치 명칭
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_01.png"
+              alt="유도등, 비상전원 종류 및 용량, 설치장소 기준 (지하층, 도매시장)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년4회\2020년4회_05.png"
+              alt="지하상가, 유도등 비상전원 종류, 작동시간 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_15.png"
+              alt="비상전원 감시기능 vs 제어기능 설명
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년4회\2016년4회_10.png"
+              alt="옥내소화전설비, 블록선도, 내화·내열·일반 배선 구분
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_12.png"
+              alt="비상조명등 설치기준: 바닥 조도(1lx 이상), 점등확인장치, 외부 비상전원 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>선택된 이미지 주소</h2>
+    <textarea id="srcList" readonly></textarea>
+    <div class="button-container">
+      <button onclick="copyToClipboard()">복사</button>
+      <button onclick="clearAll()">삭제</button>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          const src = image.getAttribute("src");
+          const text = contentTextarea.value.trim();
+
+          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          if (text !== "") {
+            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+      }
+
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        // 모든 textarea 초기화
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+
+        // 하단 텍스트 박스 초기화
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+    </script>
+  </body>
+</html>

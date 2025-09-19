@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2024년3회</title>
+    <style>
+      /* 테이블 스타일 */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        vertical-align: top; /* 셀 내용이 상단에 정렬되도록 함 */
+      }
+      td:first-child {
+        width: 80%;
+      }
+      img {
+        max-width: 100%; /* 이미지가 셀 너비를 넘지 않도록 조정 */
+        height: auto;
+      }
+      textarea.image-content {
+        width: 100%;
+        height: 100px;
+        box-sizing: border-box;
+        resize: none;
+      }
+
+      /* 하단 텍스트 박스 스타일 */
+      #srcList {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
+      .button-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+      .button-container button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>2024년3회</h1>
+
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              src=".\2023년2회\2023년2회_01.png"
+              alt="차동식 스포트형 감지기, 설치 수량 계산, 내화구조, 부착높이 3.8m
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년1회\2020년1회_02.png"
+              alt="공기관식 차동식 분포형 감지기 설치기준: 노출길이, 검출부 접속길이, 수평거리, 상호거리, 두께·지름
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_14.png"
+              alt="종단저항 계산, 감지기 작동 시 전류 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년2회\2019년2회_03.png"
+              alt="차동식 스포트형 감지기, 설치면적 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년2회\2014년2회_06.png"
+              alt="교차회로방식 제외 감지기 8종
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년1회\2020년1회_06.png"
+              alt="차동식 분포형 감지기 종류: 공기관식, 열전대식, 열반도체식
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_15.png"
+              alt="감지기 설치기준, 공기유입구 거리, 온도차 기준, 경사도 제한
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년1회\2023년1회_13.png"
+              alt="감지기 종류, 다신호식 감지기, 아날로그식 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년1회\2024년1회_12.png"
+              alt="공기관식 차동식 분포형 감지기, 공기관 거리, 검출부 높이, 노출 길이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_03.png"
+              alt="교차회로방식 적용 설비 및 제외 감지기 종류
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_17.png"
+              alt="차동식 스포트형 감지기 구조, 각 부품 명칭
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_18.png"
+              alt="감지기 설치 제외 장소 5가지 (부식성, 고온, 기류 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년1회\2023년1회_10.png"
+              alt="공기관식 차동식 분포형 감지기, 재질(동관), 배선 가닥수 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년2회\2014년2회_16.png"
+              alt="정온식 감지선형 감지기 설치기준 (간격, 반경, 수평거리)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년2회\2014년2회_18.png"
+              alt="연기감지기 설치장소 기준, 감지기 경사각·공기관 노출길이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년2회\2018년2회_06.png"
+              alt="광전식 분리형 감지기, 설치기준, 광축 거리·높이·이격 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년4회\2014년4회_07.png"
+              alt="공기관식 감지기 설치기준 (노출길이, 공기관 길이, 수평거리, 두께·외경)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_18.png"
+              alt="감지기 수량 계산, 설치높이별 종류(연기·정온·차동식), 도면 배치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년2회\2019년2회_04.png"
+              alt="광전식 분리형 감지기, 설치기준, 광축 거리·높이·이격
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_08.png"
+              alt="비화재보 원인 3가지 (수신기·감지기 오작동)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년2회\2020년2회_02.png"
+              alt="차동식 스포트형 감지기, 리크홀 수축/확장, 작동시간 변화
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년1회\2020년1회_10.png"
+              alt="감지기 설치 기준표: 차동식·보상식·정온식, 내화/비내화구조, 부착높이별 면적
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년1회\2012년1회_03.png"
+              alt="교차회로방식 제외 감지기 5종
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년1회\2014년1회_06.png"
+              alt="감지기 동작전류 계산 (종단저항, 릴레이저항 포함)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년1회\2012년1회_05.png"
+              alt="수직경계구역 회로 수 계산, 권상기실·계단실 감지기 설치, 연기감지기 종류
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_06.png"
+              alt="소방시설 도시기호, 감지선, 중계기, 정온식 스포트형 감지기, 비상벨
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년2회\2013년2회_15.png"
+              alt="공기관식 감지기 시험방법 (테스트 펌프 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년1회\2021년1회_17.png"
+              alt="감지기 명칭, 공칭작동온도, 반전바이메탈식, 부착높이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_02.png"
+              alt="공기관식 차동식 분포형 감지기, 설치기준 거리·두께·길이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년4회\2012년4회_08.png"
+              alt="복도 감지기 배치: 연기감지기 2종/3종 거리 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년2회\2021년2회_05.png"
+              alt="단독경보형 감지기, 설치기준, 바닥면적 기준, 건전지 교환, 제품검사
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년2회\2012년2회_08.png"
+              alt="정온식 감지선형 감지기 설치기준, 굴곡반경, 고정장치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_16.png"
+              alt="축적기능 감지기 설치 기준 (지하층, 무창층, 면적, 높이)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_05.png"
+              alt="감지기 절연저항시험, 사용기기·판정기준·측정위치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_06.png"
+              alt="광전식 공기흡입형 감지기, 동작원리, 연기 이송시간
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년1회\2019년1회_02.png"
+              alt="감지기 설치기준, 공기유입구 거리, 정온점, 설치경사, 적응성 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년1회\2021년1회_18.png"
+              alt="공기관식 차동식 분포형 감지기, 설치길이, 검출부 수량 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년4회\2014년4회_17.png"
+              alt="감지기 절연저항 시험기기 및 판정기준 (500V 절연저항계, 50㏁ 이상)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2019년4회\2019년4회_10.png"
+              alt="차동식 스포트형 감지기, 설치개수 산정, 면적 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년4회\2013년4회_14.png"
+              alt="광전식 감지기 원리, 난반사·산란광·감광식·감지방식 구분
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년4회\2023년4회_02.png"
+              alt="감지기 종류, 거실 높이 20m 이상, 불꽃감지기, 광전식 아날로그방식
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년1회\2024년1회_03.png"
+              alt="감지기 설치 기준, 부착높이 15~20m, 불꽃감지기, 광전식 아날로그
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년4회\2023년4회_09.png"
+              alt="감지기 설치 제외장소, 높이 20m 이상, 부식성가스, 수증기, 저온도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년1회\2012년1회_13.png"
+              alt="공기관식 감지기 검출부 수 계산 (370m 기준)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2012년1회\2012년1회_12.png"
+              alt="종단저항 계산, 감지기 작동 시 전류 계산
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년4회\2013년4회_17.png"
+              alt="공기관식 감지기 유통시험 방법
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2018년4회\2018년4회_14.png"
+              alt="광전식 분리형 감지기, 공칭감시거리 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2023년4회\2023년4회_13.png"
+              alt="정온식 스포트형 감지기, 열감지방식 5가지 (바이메탈, 팽창 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년1회\2014년1회_08.png"
+              alt="차동식 스포트형 감지기 구조, 각 부품 명칭·역할
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년4회\2013년4회_13.png"
+              alt="감지기 절연저항 시험기기, 판정기준, 측정위치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2013년1회\2013년1회_03.png"
+              alt="감지기 설치 제외 장소 5가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년1회\2015년1회_04.png"
+              alt="이산화탄소 소화설비, 교차회로방식, 예외 감지기 종류
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년4회\2015년4회_15.png"
+              alt="차동식 스포트형 감지기, 구조 명칭, 리크공 기능
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년3회\2020년3회_04.png"
+              alt="차동식 스포트형 감지기, 설치개수 계산, 내화구조, 부착높이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년4회\2015년4회_16.png"
+              alt="고천장 설치 감지기, 불꽃감지기, 광전식 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년2회\2024년2회_14.png"
+              alt="열전대식 감지기 원리: 제어백효과, 열전대 정의, 재료(백금)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2014년4회\2014년4회_18.png"
+              alt="단독경보형 감지기 설치기준 (면적 기준, 개방된 실, 건전지 교환 등)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년3회\2020년3회_07.png"
+              alt="감지기 종류, 거실 높이 20m 이상, 불꽃감지기, 광전식 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년1회\2016년1회_03.png"
+              alt="단독경보형 감지기 설치기준, 면적 기준, 실 구분
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년1회\2016년1회_05.png"
+              alt="자동화재탐지설비 설계, 감지기 종류, 개수 산정, 배선가닥수
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년1회\2016년1회_11.png"
+              alt="정온식 감지선형 감지기, 색상별 작동온도
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년1회\2016년1회_14.png"
+              alt="감지기 미설치 장소, 화재안전기준 예외 조건
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년2회\2017년2회_10.png"
+              alt="감지기 설치개수 산정, 차동식 vs 광전식, 설치면적 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년2회\2016년2회_03.png"
+              alt="광전식 분리형 감지기, 설치기준, 광축 거리
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년3회\2024년3회_02.png"
+              alt="광전식 감지기 작동원리(산란광식·감광식), 적응장소(연기 이동 많은 곳)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년3회\2020년3회_03.png"
+              alt="차동식 분포형 감지기, 공기관식, 유통시험, 마노미터, 테스트펌프
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년2회\2010년2회_11.png"
+              alt="축적기능 감지기 설치 기준 (있는 경우 vs 없는 경우)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년2회\2022년2회_05.png"
+              alt="감지기 설치 수량 계산, 차동식 vs 광전식 스포트형, 내화구조, 부착높이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년2회\2016년2회_15.png"
+              alt="감지기 설치면적 기준, 부착높이, 구조별 면적
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년4회\2016년4회_02.png"
+              alt="공기관식 차동식 분포형 감지기, 접점수고 시험, 현상 분석
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년4회\2016년4회_04.png"
+              alt="공기관식 감지기 시험방법, 마노미터, 테스트펌프
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년2회\2010년2회_01.png"
+              alt="감지기 형식별 특성 (다신호식, 아날로그식, 축적형)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년4회\2020년4회_06.png"
+              alt="공기관식 차동식 분포형 감지기, 설치기준, 거리, 경사도, 재질
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년4회\2016년4회_05.png"
+              alt="연기감지기 설치 불가 환경, 차동식 분포형 감지기 적응성 장소
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년4회\2016년4회_09.png"
+              alt="공기관식 감지기 설치기준, 거리·높이·재질·경사도·가닥수
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년4회\2020년4회_09.png"
+              alt="감지기 종류, 지하층·무창층 적응성, 오작동 방지형 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년4회\2020년4회_10.png"
+              alt="광전식 분리형 감지기, 설치기준 6가지, 광축 거리 및 위치
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2016년4회\2016년4회_12.png"
+              alt="보상식 vs 열복합형 감지기, 동작방식, 신호출력, 목적, 적응성
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년1회\2010년1회_07.png"
+              alt="다신호식 감지기, 아날로그식 감지기, 화재신호 출력방식
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2010년1회\2010년1회_04.png"
+              alt="감지기 설치 제외 장소
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년2회\2017년2회_08.png"
+              alt="차동식 스포트형 감지기 구조, 각 부품 명칭 및 역할
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년4회\2015년4회_11.png"
+              alt="감지기 축적기능, 설치 제한 장소
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년5회\2020년5회_08.png"
+              alt="감지기 설치면적 기준, 부착높이, 특정소방대상물 구분, 차동식·보상식·정온식 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년2회\2024년2회_10.png"
+              alt="차동식 스포트형 감지기 구조 명칭: 바이메탈, 지지판, 접점, 단자대
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년2회\2015년2회_16.png"
+              alt="감지기 종류, 무창층/지하층 설치 가능 감지기
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년1회\2011년1회_04.png"
+              alt="감지기 설치기준, 부착 높이별 면적 기준
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년5회\2020년5회_15.png"
+              alt="감지기 절연저항시험, 사용기기(절연저항계), 판정기준(30㏁ 이상)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2011년1회\2011년1회_08.png"
+              alt="공기관식 감지기 설치기준, 노출길이, 수평거리, 두께/외경
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_03.png"
+              alt="축적기능 없는 감지기 설치 장소 3가지
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2021년4회\2021년4회_12.png"
+              alt="감지기 설치 수량, 차동식·광전식 스포트형, 설치높이 6m
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년5회\2020년5회_17.png"
+              alt="감지기 작동원리, 차동식 vs 정온식, 온도 상승률, 일정 온도 도달
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년2회\2015년2회_03.png"
+              alt="감지기 설치, 구역별 높이, 감지기 종류 및 개수 산정
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년2회\2015년2회_14.png"
+              alt="감지기 명칭, 작동온도, 작동방식, 부착높이
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2024년2회\2024년2회_07.png"
+              alt="공기관식 감지기 설치 기준: 수평거리·상호거리(1.5m/9m 이하), 노출길이(1.5m 이상), 검출부 경사도(15도 이하), 재질(동관)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년5회\2020년5회_13.png"
+              alt="광전식 감지기, 스포트형 vs 분리형, 검출방식, 작동원리
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년2회\2020년2회_10.png"
+              alt="공기관식 차동식 분포형 감지기, 설치기준, 공기관 길이, 수평거리, 검출부 경사
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2020년5회\2020년5회_09.png"
+              alt="감지기 설치 제외장소, 부식성 가스, 고온·저온, 기류 통하는 장소, 유지관리 어려운 장소
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2017년4회\2017년4회_12.png"
+              alt="작동표시장치 미설치 가능 감지기 종류
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년1회\2015년1회_10.png"
+              alt="제어백 효과, 열전대식 감지기, 작동원리
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2022년4회\2022년4회_06.png"
+              alt="공기관식 차동식 분포형 감지기, 설치기준(길이, 거리, 두께, 지름)
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src=".\2015년1회\2015년1회_14.png"
+              alt="감지기 종류별 설치 기준, 부착 높이, 바닥면적
+"
+            />
+          </td>
+          <td>
+            <textarea
+              class="image-content"
+              oninput="updateSrcList()"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>선택된 이미지 주소</h2>
+    <textarea id="srcList" readonly></textarea>
+    <div class="button-container">
+      <button onclick="copyToClipboard()">복사</button>
+      <button onclick="clearAll()">삭제</button>
+    </div>
+
+    <script>
+      function updateSrcList() {
+        const allRows = document.querySelectorAll("tbody tr");
+        let combinedContent = "";
+
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          const src = image.getAttribute("src");
+          const text = contentTextarea.value.trim();
+
+          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          if (text !== "") {
+            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+          }
+        });
+
+        document.getElementById("srcList").value = combinedContent;
+      }
+
+      function copyToClipboard() {
+        const textarea = document.getElementById("srcList");
+        textarea.select();
+        document.execCommand("copy");
+        alert("주소와 내용이 클립보드에 복사되었습니다.");
+      }
+
+      function clearAll() {
+        // 모든 textarea 초기화
+        const allTextareas = document.querySelectorAll(".image-content");
+        allTextareas.forEach((textarea) => {
+          textarea.value = "";
+        });
+
+        // 하단 텍스트 박스 초기화
+        document.getElementById("srcList").value = "";
+        alert("모든 내용이 초기화되었습니다.");
+      }
+    </script>
+  </body>
+</html>

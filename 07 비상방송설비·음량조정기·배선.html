@@ -65,7 +65,6 @@
     </style>
   </head>
   <body>
-    <h2>07 비상방송설비·음량조정기·배선</h2>
     <div class="container">
       <div class="container1">
         <table border="1">
@@ -145,6 +144,7 @@
                 ></textarea>
               </td>
             </tr>
+
             <tr>
               <td>
                 <img
@@ -161,6 +161,67 @@
               </td>
             </tr>
 
+            <tr>
+              <td>
+                <img
+                  src=".\2010년4회\2010년4회_16.png"
+                  alt="경보 우선층 표시, 연면적 기준, 층별 경보표시
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2024년1회\2024년1회_15.png"
+                  alt="우선경보방식, 층별 경보 대상, 공동주택 제외, 음향장치 기준
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src=".\2020년3회\2020년3회_17.png"
+                  alt="특정소방대상물, 화재 발생 시 경보 우선층, 지상/지하층 판단
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2022년4회\2022년4회_11.png"
+                  alt="비상방송설비, 우선경보방식, 층수 기준, 경보층 구분
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
             <tr>
               <td>
                 <img
@@ -182,21 +243,6 @@
                 <img
                   src=".\2022년2회\2022년2회_15.png"
                   alt="비상방송설비 기준, 확성기 음성입력, 수평거리, 음량조정기 배선, 조작스위치 높이
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2022년4회\2022년4회_11.png"
-                  alt="비상방송설비, 우선경보방식, 층수 기준, 경보층 구분
 "
                 />
               </td>
@@ -329,31 +375,41 @@
     <script>
       function updateSrcList() {
         // Select all table rows from the table body
+
         const allRows = document.querySelectorAll("tbody tr");
+
         let combinedContent = "";
 
         // Loop through each row
+
         allRows.forEach((row) => {
           // Find the image and textarea within the current row
+
           const image = row.querySelector("img");
+
           const contentTextarea = row.querySelector(".image-content");
 
           // Set the placeholder for the specific textarea in the current row
+
           if (image && contentTextarea) {
             contentTextarea.placeholder = image.alt;
           }
 
           // Get the value of the textarea and its corresponding image source
+
           const src = image.getAttribute("src");
+
           const text = contentTextarea.value.trim();
 
           // If the textarea has a value, append the source and content to the combined text
+
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
         // Update the final text box with the combined content
+
         document.getElementById("srcList").value = combinedContent;
       }
 

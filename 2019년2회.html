@@ -276,31 +276,41 @@
     <script>
       function updateSrcList() {
         // Select all table rows from the table body
+
         const allRows = document.querySelectorAll("tbody tr");
+
         let combinedContent = "";
 
         // Loop through each row
+
         allRows.forEach((row) => {
           // Find the image and textarea within the current row
+
           const image = row.querySelector("img");
+
           const contentTextarea = row.querySelector(".image-content");
 
           // Set the placeholder for the specific textarea in the current row
+
           if (image && contentTextarea) {
             contentTextarea.placeholder = image.alt;
           }
 
           // Get the value of the textarea and its corresponding image source
+
           const src = image.getAttribute("src");
+
           const text = contentTextarea.value.trim();
 
           // If the textarea has a value, append the source and content to the combined text
+
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
         // Update the final text box with the combined content
+
         document.getElementById("srcList").value = combinedContent;
       }
 

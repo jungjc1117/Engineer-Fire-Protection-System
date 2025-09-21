@@ -73,53 +73,23 @@
             <tr>
               <td>
                 <img
-                  src=".\2010년2회\2010년2회_18.png"
-                  alt="비상방송설비, 음량조정기 결선도
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2011년1회\2011년1회_09.png"
-                  alt="비상방송설비, 음량조정기 배선, 조작스위치 높이, 경보 우선층
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2022년1회\2022년1회_16.png"
-                  alt="비상방송설비, 확성기 회로, 음량조정기 결선도
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2020년1회\2020년1회_09.png"
                   alt="비상방송설비 음향장치 작동 기준: 정격전압의 80% 이상
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2017년1회\2017년1회_11.png"
+                  alt="비상방송설비, 경종 정지회로, 계전기 동작 조건
 "
                 />
               </td>
@@ -190,36 +160,7 @@
                 ></textarea>
               </td>
             </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2014년1회\2014년1회_10.png"
-                  alt="비상방송설비 설치기준 (입력, 배선, 소요시간, 거리)
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2021년2회\2021년2회_11.png"
-                  alt="비상방송설비, 확성기 회로, 음량조정기 결선도
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
+
             <tr>
               <td>
                 <img
@@ -235,21 +176,7 @@
                 ></textarea>
               </td>
             </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2018년4회\2018년4회_13.png"
-                  alt="비상방송설비 설치기준, 확성기 입력·배선 방식
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
+
             <tr>
               <td>
                 <img
@@ -310,21 +237,7 @@
                 ></textarea>
               </td>
             </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2012년4회\2012년4회_11.png"
-                  alt="음량조정기 결선도 (비상방송 확성기 회로)
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
+
             <tr>
               <td>
                 <img
@@ -340,21 +253,7 @@
                 ></textarea>
               </td>
             </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2017년2회\2017년2회_07.png"
-                  alt="비상방송설비 우선경보방식, 층별 배선수 및 용도
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
+
             <tr>
               <td>
                 <img
@@ -400,6 +299,21 @@
                 ></textarea>
               </td>
             </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2021년2회\2021년2회_11.png"
+                  alt="비상방송설비, 확성기 회로, 음량조정기 결선도
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -414,22 +328,32 @@
 
     <script>
       function updateSrcList() {
+        // Select all table rows from the table body
         const allRows = document.querySelectorAll("tbody tr");
         let combinedContent = "";
 
+        // Loop through each row
         allRows.forEach((row) => {
+          // Find the image and textarea within the current row
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
 
+          // Set the placeholder for the specific textarea in the current row
+          if (image && contentTextarea) {
+            contentTextarea.placeholder = image.alt;
+          }
+
+          // Get the value of the textarea and its corresponding image source
           const src = image.getAttribute("src");
           const text = contentTextarea.value.trim();
 
-          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          // If the textarea has a value, append the source and content to the combined text
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
+        // Update the final text box with the combined content
         document.getElementById("srcList").value = combinedContent;
       }
 

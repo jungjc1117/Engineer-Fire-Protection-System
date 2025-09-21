@@ -343,21 +343,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2015년2회\2015년2회_07.png"
-                  alt="배연창설비, 계통도, 배선수, 배선 용도
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2014년1회\2014년1회_03.png"
                   alt="프리액션 스프링클러 계통도, 배선 가닥수, 배선내역
 "
@@ -405,21 +390,6 @@
                 <img
                   src=".\2015년1회\2015년1회_07.png"
                   alt="자동화재탐지설비, 간선계통도, 전선 용도 및 가닥수
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2023년2회\2023년2회_13.png"
-                  alt="자동화재탐지설비 + 프리액션 스프링클러 계통도, 배선 가닥수
 "
                 />
               </td>
@@ -898,38 +868,8 @@
             <tr>
               <td>
                 <img
-                  src=".\2017년4회\2017년4회_11.png"
-                  alt="배연창설비 계통도, 배선수 및 용도, 솔레노이드식
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2018년1회\2018년1회_13.png"
                   alt="자동화재탐지설비 계통도, 전선 가닥수, 감지기 종류
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2018년1회\2018년1회_07.png"
-                  alt="배연창설비 계통도, 배선수 및 용도, 솔레노이드 방식
 "
                 />
               </td>
@@ -954,22 +894,32 @@
 
     <script>
       function updateSrcList() {
+        // Select all table rows from the table body
         const allRows = document.querySelectorAll("tbody tr");
         let combinedContent = "";
 
+        // Loop through each row
         allRows.forEach((row) => {
+          // Find the image and textarea within the current row
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
 
+          // Set the placeholder for the specific textarea in the current row
+          if (image && contentTextarea) {
+            contentTextarea.placeholder = image.alt;
+          }
+
+          // Get the value of the textarea and its corresponding image source
           const src = image.getAttribute("src");
           const text = contentTextarea.value.trim();
 
-          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          // If the textarea has a value, append the source and content to the combined text
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
+        // Update the final text box with the combined content
         document.getElementById("srcList").value = combinedContent;
       }
 

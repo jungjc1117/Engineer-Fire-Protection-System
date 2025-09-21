@@ -88,53 +88,8 @@
             <tr>
               <td>
                 <img
-                  src=".\2012년2회\2012년2회_10.png"
-                  alt="통로유도등 설치 위치 표시, 총 수량 계산
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2021년2회\2021년2회_18.png"
-                  alt="시각경보장치 설치기준, 청각장애인용, 설치 위치, 광원 전원 방식
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2018년4회\2018년4회_02.png"
                   alt="연기감지기 설치기준, 거리·위치 조건
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2016년2회\2016년2회_16.png"
-                  alt="시각경보장치 설치기준, 청각장애인용, 위치·광원 조건
 "
                 />
               </td>
@@ -178,36 +133,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2019년1회\2019년1회_14.png"
-                  alt="시각경보장치 설치기준, 위치·높이·광원·형식승인 조건
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2020년4회\2020년4회_16.png"
-                  alt="시각경보장치, 청각장애인용, 설치 위치 및 높이 기준
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2011년1회\2011년1회_13.png"
                   alt="할론소화설비 연기감지기 회로 수정, 종단저항 위치
 "
@@ -238,38 +163,8 @@
             <tr>
               <td>
                 <img
-                  src=".\2015년2회\2015년2회_09.png"
-                  alt="시각경보장치, 설치기준, 높이 및 위치 조건
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2019년2회\2019년2회_11.png"
                   alt="비상조명등 설치기준, 조도·위치·예비전원 조건
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2020년1회\2020년1회_11.png"
-                  alt="시각경보장치 설치기준: 설치 위치, 높이, 광원 전원 방식, 시선 집중 장소
 "
                 />
               </td>
@@ -324,22 +219,32 @@
 
     <script>
       function updateSrcList() {
+        // Select all table rows from the table body
         const allRows = document.querySelectorAll("tbody tr");
         let combinedContent = "";
 
+        // Loop through each row
         allRows.forEach((row) => {
+          // Find the image and textarea within the current row
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
 
+          // Set the placeholder for the specific textarea in the current row
+          if (image && contentTextarea) {
+            contentTextarea.placeholder = image.alt;
+          }
+
+          // Get the value of the textarea and its corresponding image source
           const src = image.getAttribute("src");
           const text = contentTextarea.value.trim();
 
-          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          // If the textarea has a value, append the source and content to the combined text
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
+        // Update the final text box with the combined content
         document.getElementById("srcList").value = combinedContent;
       }
 

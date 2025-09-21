@@ -148,36 +148,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2011년2회\2011년2회_01.png"
-                  alt="객석유도등 수량 계산, 유도등 배치도
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2014년2회\2014년2회_07.png"
-                  alt="준비작동식 스프링클러 감지기 수량 계산, 배선도 작성
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2024년3회\2024년3회_14.png"
                   alt="연기감지기 최소 수량 계산 (면적/설치기준 적용)
 "
@@ -195,21 +165,6 @@
                 <img
                   src=".\2013년2회\2013년2회_04.png"
                   alt="비상콘센트 간선 허용전류 계산, 콘센트함 수량
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2023년4회\2023년4회_14.png"
-                  alt="감지기 수량 계산, 차동식·연기감지기, 내화구조, 보행거리 기준
 "
                 />
               </td>
@@ -344,36 +299,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2016년2회\2016년2회_06.png"
-                  alt="감지기 수량 산정, 평면도 해석, 배선수 명시
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2020년2회\2020년2회_17.png"
-                  alt="객석유도등 설치 수량 계산, 통로 길이, 설치 간격
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2018년2회\2018년2회_13.png"
                   alt="통로유도등 설치 수량 산정, 평면도 표시, 복도 길이 기준
 "
@@ -419,21 +344,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2020년4회\2020년4회_12.png"
-                  alt="객석유도등, 통로 길이 50m, 설치 개수 계산
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2023년1회\2023년1회_12.png"
                   alt="단독경보형 감지기, 설치 수량 계산, 조작스위치 높이, 증폭기 정의
 "
@@ -461,21 +371,6 @@
                 ></textarea>
               </td>
             </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2018년2회\2018년2회_01.png"
-                  alt="배선도면 해석, 그림기호 명칭, 배선 가닥수, 박스 수량, 부싱 수량
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -490,22 +385,32 @@
 
     <script>
       function updateSrcList() {
+        // Select all table rows from the table body
         const allRows = document.querySelectorAll("tbody tr");
         let combinedContent = "";
 
+        // Loop through each row
         allRows.forEach((row) => {
+          // Find the image and textarea within the current row
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
 
+          // Set the placeholder for the specific textarea in the current row
+          if (image && contentTextarea) {
+            contentTextarea.placeholder = image.alt;
+          }
+
+          // Get the value of the textarea and its corresponding image source
           const src = image.getAttribute("src");
           const text = contentTextarea.value.trim();
 
-          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          // If the textarea has a value, append the source and content to the combined text
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
+        // Update the final text box with the combined content
         document.getElementById("srcList").value = combinedContent;
       }
 

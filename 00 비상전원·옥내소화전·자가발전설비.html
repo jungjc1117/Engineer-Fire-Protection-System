@@ -209,66 +209,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2016년1회\2016년1회_01.png"
-                  alt="비상콘센트, 비상전원 면제 조건
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2019년4회\2019년4회_11.png"
-                  alt="비상조명등 설치기준, 점등확인장치, 예비전원 종류·시간
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2010년4회\2010년4회_12.png"
-                  alt="비상전원 종류별 적용 설비 (축전지, 수전, 자가발전)
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2014년2회\2014년2회_04.png"
-                  alt="비상콘센트설비 비상전원 종류, 절연저항 측정방법
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2018년4회\2018년4회_03.png"
                   alt="옥내소화전설비, 비상전원 종류
 "
@@ -505,22 +445,32 @@
 
     <script>
       function updateSrcList() {
+        // Select all table rows from the table body
         const allRows = document.querySelectorAll("tbody tr");
         let combinedContent = "";
 
+        // Loop through each row
         allRows.forEach((row) => {
+          // Find the image and textarea within the current row
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
 
+          // Set the placeholder for the specific textarea in the current row
+          if (image && contentTextarea) {
+            contentTextarea.placeholder = image.alt;
+          }
+
+          // Get the value of the textarea and its corresponding image source
           const src = image.getAttribute("src");
           const text = contentTextarea.value.trim();
 
-          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          // If the textarea has a value, append the source and content to the combined text
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
+        // Update the final text box with the combined content
         document.getElementById("srcList").value = combinedContent;
       }
 

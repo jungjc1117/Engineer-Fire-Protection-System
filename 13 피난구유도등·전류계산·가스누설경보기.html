@@ -193,21 +193,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2021년1회\2021년1회_15.png"
-                  alt="피난구유도등, 전류 계산, 역률, AC 220V
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2019년1회\2019년1회_10.png"
                   alt="피난구유도등 전류 계산, 역률 반영
 "
@@ -283,36 +268,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2017년4회\2017년4회_10.png"
-                  alt="피난구유도등 전류 계산, 역률 반영
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2023년1회\2023년1회_02.png"
-                  alt="가스누설경보기, 표시등 색상(황색), 단독형·분리형, 탐지부
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2013년1회\2013년1회_10.png"
                   alt="가스누설경보기 색상, 구조·용도별 분류, 탐지부 명칭
 "
@@ -358,68 +313,8 @@
             <tr>
               <td>
                 <img
-                  src=".\2016년2회\2016년2회_14.png"
-                  alt="피난구유도등, 역률 반영 전류 계산
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2013년4회\2013년4회_05.png"
                   alt="피난구유도등 설치장소, 설치높이, 색상 기준
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2015년4회\2015년4회_10.png"
-                  alt="피난구유도등, 2선식/3선식 배선방식, 결선도
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2023년1회\2023년1회_04.png"
-                  alt="피난구유도등, 설치장소, 설치높이(1.5m 이상), 바탕색·문자색
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2017년2회\2017년2회_01.png"
-                  alt="가스누설경보기, 수신개시 시간, 지구등 색상, 축전지 종류 및 용량, 절연저항 기준
 "
                 />
               </td>
@@ -465,21 +360,6 @@
                 <img
                   src=".\2014년4회\2014년4회_13.png"
                   alt="피난구유도등 적색 LED 점등 의미 (비상전원 불량)
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2014년2회\2014년2회_15.png"
-                  alt="피난구유도등 설치높이, 표시면 색상
 "
                 />
               </td>
@@ -549,22 +429,32 @@
 
     <script>
       function updateSrcList() {
+        // Select all table rows from the table body
         const allRows = document.querySelectorAll("tbody tr");
         let combinedContent = "";
 
+        // Loop through each row
         allRows.forEach((row) => {
+          // Find the image and textarea within the current row
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
 
+          // Set the placeholder for the specific textarea in the current row
+          if (image && contentTextarea) {
+            contentTextarea.placeholder = image.alt;
+          }
+
+          // Get the value of the textarea and its corresponding image source
           const src = image.getAttribute("src");
           const text = contentTextarea.value.trim();
 
-          // 텍스트가 있을 때만 최종 텍스트 박스에 추가
+          // If the textarea has a value, append the source and content to the combined text
           if (text !== "") {
             combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
           }
         });
 
+        // Update the final text box with the combined content
         document.getElementById("srcList").value = combinedContent;
       }
 

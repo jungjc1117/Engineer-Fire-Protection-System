@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>수직 북마크 재배열</title>
+    <!-- Tailwind CSS를 로드하여 쉬운 스타일링을 할 수 있게 합니다. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* 드래그되는 요소를 위한 스타일 */
+      .dragging {
+        opacity: 0.4;
+      }
+      /* 드롭 존에 들어갈 때의 시각적 피드백 */
+      .drop-zone-highlight {
+        border-color: #6366f1; /* 보라색 테두리 */
+        background-color: #eef2ff; /* 연한 보라색 배경 */
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4"
+  >
+    <main class="w-full max-w-2xl space-y-8">
+      <h1 class="text-3xl font-bold text-center text-gray-800">
+        나만의 북마크를 재배열하세요
+      </h1>
+
+      <!-- 하나의 통합된 드롭 존: 모든 카드가 여기에 있습니다. -->
+      <div
+        id="bookmark-list"
+        class="drop-zone w-full bg-white p-6 rounded-lg shadow-lg border-2 border-dashed border-gray-300 transition-all duration-300"
+      >
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">
+          여기에 드롭하여 순서를 바꿀 수 있습니다.
+        </h2>
+
+        <!-- 드래그 가능한 첫 번째 카드 -->
+        <div
+          id="drag-item-1"
+          class="draggable-item bg-white rounded-lg shadow-md p-4 mb-4 cursor-pointer transition-all duration-300"
+          draggable="true"
+        >
+          <table class="w-full border-collapse">
+            <tbody>
+              <tr>
+                <td class="p-2">
+                  <!-- Placeholder 이미지 사용 -->
+                  <img
+                    src="https://placehold.co/200x150/E0E7FF/4338CA?text=비상전원"
+                    alt="비상전원 종류별 적용 설비 (축전지, 수전, 자가발전)"
+                    class="rounded-lg w-full"
+                  />
+                </td>
+                <td class="p-2">
+                  <textarea
+                    class="w-full h-32 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  ></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 드래그 가능한 두 번째 카드 -->
+        <div
+          id="drag-item-2"
+          class="draggable-item bg-white rounded-lg shadow-md p-4 mb-4 cursor-pointer transition-all duration-300"
+          draggable="true"
+        >
+          <table class="w-full border-collapse">
+            <tbody>
+              <tr>
+                <td class="p-2">
+                  <!-- Placeholder 이미지 사용 -->
+                  <img
+                    src="https://placehold.co/200x150/D1C4E9/673AB7?text=옥내소화전설비"
+                    alt="옥내소화전설비 비상전원 설치기준 5가지"
+                    class="rounded-lg w-full"
+                  />
+                </td>
+                <td class="p-2">
+                  <textarea
+                    class="w-full h-32 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  ></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 드래그 가능한 세 번째 카드 -->
+        <div
+          id="drag-item-3"
+          class="draggable-item bg-white rounded-lg shadow-md p-4 mb-4 cursor-pointer transition-all duration-300"
+          draggable="true"
+        >
+          <table class="w-full border-collapse">
+            <tbody>
+              <tr>
+                <td class="p-2">
+                  <!-- Placeholder 이미지 사용 -->
+                  <img
+                    src="https://placehold.co/200x150/C8E6C9/4CAF50?text=2018년4회"
+                    alt="2018년4회_02.png"
+                    class="rounded-lg w-full"
+                  />
+                </td>
+                <td class="p-2">
+                  <textarea
+                    class="w-full h-32 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  ></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 드래그 가능한 네 번째 카드 -->
+        <div
+          id="drag-item-4"
+          class="draggable-item bg-white rounded-lg shadow-md p-4 mb-4 cursor-pointer transition-all duration-300"
+          draggable="true"
+        >
+          <table class="w-full border-collapse">
+            <tbody>
+              <tr>
+                <td class="p-2">
+                  <!-- Placeholder 이미지 사용 -->
+                  <img
+                    src="https://placehold.co/200x150/FFECB3/FF9800?text=2014년4회"
+                    alt="2014년4회_12.png"
+                    class="rounded-lg w-full"
+                  />
+                </td>
+                <td class="p-2">
+                  <textarea
+                    class="w-full h-32 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  ></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 드래그 가능한 다섯 번째 카드 -->
+        <div
+          id="drag-item-5"
+          class="draggable-item bg-white rounded-lg shadow-md p-4 mb-4 cursor-pointer transition-all duration-300"
+          draggable="true"
+        >
+          <table class="w-full border-collapse">
+            <tbody>
+              <tr>
+                <td class="p-2">
+                  <!-- Placeholder 이미지 사용 -->
+                  <img
+                    src="https://placehold.co/200x150/CFD8DC/607D8B?text=2012년4회"
+                    alt="2012년4회_15.png"
+                    class="rounded-lg w-full"
+                  />
+                </td>
+                <td class="p-2">
+                  <textarea
+                    class="w-full h-32 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  ></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const draggables = document.querySelectorAll(".draggable-item");
+      const dropZones = document.querySelectorAll(".drop-zone");
+
+      draggables.forEach((item) => {
+        item.addEventListener("dragstart", (e) => {
+          e.target.classList.add("dragging");
+          e.dataTransfer.setData("text/plain", e.target.id);
+        });
+        item.addEventListener("dragend", (e) => {
+          e.target.classList.remove("dragging");
+        });
+      });
+      dropZones.forEach((zone) => {
+        zone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          zone.classList.add("drop-zone-highlight");
+        });
+        zone.addEventListener("dragleave", (e) => {
+          zone.classList.remove("drop-zone-highlight");
+        });
+        zone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          zone.classList.remove("drop-zone-highlight");
+          const draggedId = e.dataTransfer.getData("text/plain");
+          const draggedElement = document.getElementById(draggedId);
+
+          if (draggedElement) {
+            const dropTarget = e.target.closest(".drop-zone");
+            if (dropTarget) {
+              const afterElement = getDragAfterElement(dropTarget, e.clientY);
+              if (afterElement == null) {
+                dropTarget.appendChild(draggedElement);
+              } else {
+                dropTarget.insertBefore(draggedElement, afterElement);
+              }
+            }
+          }
+        });
+      });
+
+      function getDragAfterElement(container, y) {
+        const draggableElements = [
+          ...container.querySelectorAll(".draggable-item:not(.dragging)"),
+        ];
+        return draggableElements.reduce(
+          (closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+              return { offset: offset, element: child };
+            } else {
+              return closest;
+            }
+          },
+          { offset: Number.NEGATIVE_INFINITY }
+        ).element;
+      }
+    </script>
+  </body>
+</html>

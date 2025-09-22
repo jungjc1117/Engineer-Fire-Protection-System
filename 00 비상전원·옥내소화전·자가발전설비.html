@@ -54,6 +54,13 @@
         box-sizing: border-box;
         resize: none;
       }
+      #srcListCode {
+        width: 100%;
+        height: 200px;
+        margin-top: 20px;
+        box-sizing: border-box;
+        resize: none;
+      }
       .button-container {
         margin-top: 10px;
         display: flex;
@@ -73,38 +80,8 @@
             <tr>
               <td>
                 <img
-                  src=".\2015년2회\2015년2회_06.png"
-                  alt="비상전원 종류별 적용 설비 (축전지, 수전, 자가발전)
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2017년2회\2017년2회_05.png"
                   alt="옥내소화전설비 비상전원 설치기준 5가지
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2013년2회\2013년2회_17.png"
-                  alt="옥내소화전 비상전원 설치기준 5가지
 "
                 />
               </td>
@@ -210,21 +187,6 @@
                 <img
                   src=".\2018년4회\2018년4회_03.png"
                   alt="옥내소화전설비, 비상전원 종류
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2024년2회\2024년2회_09.png"
-                  alt="옥내소화전설비 비상전원 설치기준 3가지: 자동절환, 20분 이상, 전용회로
 "
                 />
               </td>
@@ -403,21 +365,6 @@
             <tr>
               <td>
                 <img
-                  src=".\2016년4회\2016년4회_10.png"
-                  alt="옥내소화전설비, 블록선도, 내화·내열·일반 배선 구분
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
                   src=".\2024년3회\2024년3회_12.png"
                   alt="비상조명등 설치기준: 바닥 조도(1lx 이상), 점등확인장치, 외부 비상전원 조건
 "
@@ -435,6 +382,7 @@
       </div>
       <div class="container2">
         <textarea id="srcList" readonly></textarea>
+        <textarea id="srcListCode" readonly></textarea>
         <div class="button-container">
           <button onclick="copyToClipboard()">복사</button>
           <button onclick="clearAll()">삭제</button>
@@ -444,45 +392,42 @@
 
     <script>
       function updateSrcList() {
-        // Select all table rows from the table body
-
         const allRows = document.querySelectorAll("tbody tr");
-
         let combinedContent = "";
-
-        // Loop through each row
+        let combinedContent1 = "";
 
         allRows.forEach((row) => {
-          // Find the image and textarea within the current row
-
           const image = row.querySelector("img");
-
           const contentTextarea = row.querySelector(".image-content");
 
-          // Set the placeholder for the specific textarea in the current row
-
           if (image && contentTextarea) {
-            contentTextarea.placeholder = image.alt;
-          }
+            const src = image.getAttribute("src");
+            const text = contentTextarea.value.trim();
 
-          // Get the value of the textarea and its corresponding image source
-
-          const src = image.getAttribute("src");
-
-          const text = contentTextarea.value.trim();
-
-          // If the textarea has a value, append the source and content to the combined text
-
-          if (text !== "") {
-            combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+            if (text !== "") {
+              combinedContent += `주소: ${src}\n내용: ${text}\n\n`;
+              combinedContent1 += `
+            <tr>
+              <td>
+                <img
+                  src="${src}"
+                  alt="${text}"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+              </td>
+            </tr>\n`;
+            }
           }
         });
 
-        // Update the final text box with the combined content
-
         document.getElementById("srcList").value = combinedContent;
+        document.getElementById("srcListCode").value = combinedContent1;
       }
-
       function copyToClipboard() {
         const textarea = document.getElementById("srcList");
         textarea.select();
@@ -491,16 +436,27 @@
       }
 
       function clearAll() {
-        // 모든 textarea 초기화
         const allTextareas = document.querySelectorAll(".image-content");
         allTextareas.forEach((textarea) => {
           textarea.value = "";
         });
-
-        // 하단 텍스트 박스 초기화
         document.getElementById("srcList").value = "";
         alert("모든 내용이 초기화되었습니다.");
       }
+
+      // 페이지 로드 시 모든 textarea의 placeholder를 설정하는 함수
+      window.onload = function () {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row) => {
+          const image = row.querySelector("img");
+          const contentTextarea = row.querySelector(".image-content");
+
+          if (image && contentTextarea) {
+            const altText = image.getAttribute("alt");
+            contentTextarea.setAttribute("placeholder", altText);
+          }
+        });
+      };
     </script>
   </body>
 </html>

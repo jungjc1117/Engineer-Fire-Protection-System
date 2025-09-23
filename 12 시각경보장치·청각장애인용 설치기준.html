@@ -89,6 +89,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -104,6 +105,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -119,21 +121,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2024년1회\2024년1회_17.png"
-                  alt="종단저항 설치 기준, 감지기회로 도통시험, 설치 위치·방법
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -149,6 +137,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -164,6 +153,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -179,21 +169,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img
-                  src=".\2010년4회\2010년4회_02.png"
-                  alt="무선통신보조설비, 무반사 종단저항, 설치 위치 및 목적
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -209,6 +185,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
           </tbody>
@@ -253,6 +230,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>\n`;
             }
@@ -284,10 +262,12 @@
         allRows.forEach((row) => {
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
 
-          if (image && contentTextarea) {
+          if (image && contentTextarea && label) {
             const altText = image.getAttribute("alt");
-            contentTextarea.setAttribute("placeholder", altText);
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
           }
         });
       };

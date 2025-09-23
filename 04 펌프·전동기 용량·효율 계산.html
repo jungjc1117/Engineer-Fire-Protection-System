@@ -89,6 +89,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
 
@@ -105,6 +106,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
 
@@ -121,22 +123,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <img
-                  src=".\2021년1회\2021년1회_05.png"
-                  alt="펌프용 전동기, 양수량, 양정, 효율, 여유계수, V결선, 변압기 용량
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
 
@@ -153,6 +140,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
 
@@ -169,6 +157,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -184,6 +173,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
 
@@ -200,6 +190,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -215,6 +206,71 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src=".\2012년1회\2012년1회_08.png"
+                  alt="유도등 공급전류 계산 (역률 포함)"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <img
+                  src=".\2014년4회\2014년4회_09.png"
+                  alt="유도등 전선 굵기 계산 (전압강하, 역률, 거리, 단상 2선식)"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2011년1회\2011년1회_01.png"
+                  alt="비상콘센트, 송풍기 전류 계산, 역률 개선, 콘덴서 용량, 접지공사 종류
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img
+                  src=".\2020년5회\2020년5회_14.png"
+                  alt="스프링클러펌프, 유도전동기, Y-Δ 기동방식, 역률 개선, 전력용 콘덴서 용량 계산
+"
+                />
+              </td>
+              <td>
+                <textarea
+                  class="image-content"
+                  oninput="updateSrcList()"
+                ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
           </tbody>
@@ -259,6 +315,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>\n`;
             }
@@ -290,10 +347,12 @@
         allRows.forEach((row) => {
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
 
-          if (image && contentTextarea) {
+          if (image && contentTextarea && label) {
             const altText = image.getAttribute("alt");
-            contentTextarea.setAttribute("placeholder", altText);
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
           }
         });
       };

@@ -84,6 +84,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -93,6 +94,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -102,6 +104,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -111,6 +114,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -120,6 +124,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -129,6 +134,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -138,6 +144,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -147,6 +154,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -156,6 +164,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -167,6 +176,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -178,6 +188,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -189,6 +200,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -200,6 +212,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -211,6 +224,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -222,6 +236,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
             <tr>
@@ -233,6 +248,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>
           </tbody>
@@ -277,6 +293,7 @@
                   class="image-content"
                   oninput="updateSrcList()"
                 ></textarea>
+                <label for="label">label</label>
               </td>
             </tr>\n`;
             }
@@ -308,10 +325,12 @@
         allRows.forEach((row) => {
           const image = row.querySelector("img");
           const contentTextarea = row.querySelector(".image-content");
+          const label = row.querySelector("label"); // Select the <label> element
 
-          if (image && contentTextarea) {
+          if (image && contentTextarea && label) {
             const altText = image.getAttribute("alt");
-            contentTextarea.setAttribute("placeholder", altText);
+            contentTextarea.setAttribute("placeholder", altText); // Set the placeholder
+            label.textContent = altText; // Set the label's text content
           }
         });
       };

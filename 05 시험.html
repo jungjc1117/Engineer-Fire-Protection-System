@@ -263,41 +263,8 @@
             <tr>
               <td>
                 <img
-                  src=".\2024년1회\2024년1회_17.png"
-                  alt="종단저항 설치 기준, 감지기회로 도통시험, 설치 위치·방법
-"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-                <label for="label">label</label>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <img
                   src=".\2017년1회\2017년1회_12.png"
                   alt="스프링클러 감시제어반, 도통시험·작동시험 회로 종류"
-                />
-              </td>
-              <td>
-                <textarea
-                  class="image-content"
-                  oninput="updateSrcList()"
-                ></textarea>
-                <label for="label">label</label>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <img
-                  src=".\2024년3회\2024년3회_15.png"
-                  alt="수신기 동시작동시험 목적: 회로 간 간섭 방지, 동작 안정성 확인"
                 />
               </td>
               <td>
@@ -317,6 +284,8 @@
         <div class="button-container">
           <button onclick="copyToClipboard()">복사</button>
           <button onclick="clearAll()">삭제</button>
+          <button onclick="inputNumbers()">숫자기입</button>
+          <button onclick="deleteInputNumbers()">기입숫자제거</button>
         </div>
       </div>
     </div>
@@ -374,6 +343,39 @@
         });
         document.getElementById("srcList").value = "";
         alert("모든 내용이 초기화되었습니다.");
+      }
+
+      function inputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+        allRows.forEach((row, index) => {
+          const indexNumber = index + 1;
+          const textarea = row.querySelector("textarea.image-content");
+          if (textarea) {
+            textarea.value = indexNumber.toString();
+          }
+        });
+      }
+
+      // 이 함수는 텍스트 영역에 순서대로 기입된 숫자만 지우고, 다른 내용이 있으면 그대로 남깁니다.
+      // 그리고 그 결과에 맞춰 srcListCode를 업데이트합니다.
+      function deleteInputNumbers() {
+        const allRows = document.querySelectorAll("tbody tr");
+
+        allRows.forEach((row, index) => {
+          const textarea = row.querySelector("textarea.image-content");
+
+          if (textarea) {
+            const expectedNumber = (index + 1).toString();
+            const currentValue = textarea.value.trim();
+
+            if (currentValue === expectedNumber) {
+              textarea.value = "";
+            }
+          }
+        });
+
+        // 텍스트 영역 내용 변경 후 srcListCode를 다시 생성합니다.
+        updateSrcList();
       }
 
       // 페이지 로드 시 모든 textarea의 placeholder를 설정하는 함수

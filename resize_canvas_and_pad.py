@@ -67,11 +67,11 @@ def resize_canvas_and_pad(input_folder, output_folder, target_height, bg_color=(
 
 # --- 사용 예시 ---
 # 원본 이미지가 있는 폴더
-input_folder_path = 'images-trimmed-1' 
+input_folder_path = '2010년1회' 
 # 처리된 이미지를 저장할 새 폴더
-output_folder_path = 'images-trimmed-1-padded' 
+output_folder_path = '2010년1회-padded' 
 # 캔버스의 목표 높이 (예: 1000픽셀)
-desired_canvas_height = 2463 
+desired_canvas_height = 2047 
 # 배경색 (선택 사항, 기본값은 흰색)
 # bg_color_rgb = (255, 255, 255) # 흰색 (기본값)
 # bg_color_rgb = (0, 0, 0)     # 검은색

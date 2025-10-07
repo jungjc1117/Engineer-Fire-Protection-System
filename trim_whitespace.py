@@ -95,9 +95,9 @@ def trim_whitespace(input_folder, output_folder, bg_color=(255, 255, 255)):
 
 # --- 사용 예시 ---
 # 원본 이미지가 있는 폴더
-input_folder_path = 'images-trimmed-1-padded-merged' 
+input_folder_path = '2010년1회-padded-merged' 
 # 여백 제거 후 이미지를 저장할 새 폴더
-output_folder_path = 'images-trimmed-1-padded-merged-trimmed' 
+output_folder_path = '2010년1회-padded-merged-trimmed' 
 # 제거할 배경색 (예: 흰색. 다른 색이면 이 값을 변경하세요)
 # bg_color_to_remove = (255, 255, 255) # 흰색 (기본값)
 # bg_color_to_remove = (0, 0, 0)     # 검은색

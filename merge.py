@@ -2,9 +2,9 @@ import os
 from PIL import Image
 
 # 원본 이미지 폴더 경로
-input_folder = "images-trimmed-1-padded"   # 👉 여기에 원본 이미지 폴더 경로 입력
+input_folder = "2010년1회-padded"   # 👉 여기에 원본 이미지 폴더 경로 입력
 # 합쳐진 이미지를 저장할 폴더
-output_folder = "images-trimmed-1-padded-merged"
+output_folder = "2010년1회-padded-merged"
 
 # 저장 폴더 없으면 생성
 os.makedirs(output_folder, exist_ok=True)

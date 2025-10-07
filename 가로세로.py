@@ -41,5 +41,5 @@ def print_max_image_height(folder_path):
         print(f"'{folder_path}' 폴더에서 유효한 이미지 파일을 찾을 수 없습니다.")
 
 # 사용 예시: '새폴더-1'이라는 폴더에 이미지가 있다고 가정
-image_folder = 'images-trimmed-1'  # 이 경로를 실제 이미지 폴더 경로로 변경하세요
+image_folder = '2010년1회'  # 이 경로를 실제 이미지 폴더 경로로 변경하세요
 print_max_image_height(image_folder)

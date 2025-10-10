@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소방설비 학습 자료</title>
+    <style>
+      /*
+        * Applies flex to the main container to arrange items
+        * 'flex-wrap: wrap' allows items to move to the next line
+        * 'gap' provides spacing between items
+        */
+      .body-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Spacing between the fact blocks */
+        padding: 20px;
+        /* Adjust width as needed to control the number of columns */
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /*
+        * Sets the basic structure for each fact block
+        * 'flex-basis' ensures roughly 4 items per row (25% minus gap)
+        */
+      .item-container {
+        /* flex-basis: calc(25% - 20px); sets it up for 4 columns with a 20px gap */
+        flex-basis: calc(25% - 15px);
+        border: 1px solid #ddd;
+        padding: 15px;
+        box-sizing: border-box;
+        min-width: 250px; /* Ensures minimum readability */
+      }
+
+      /* Style for the title (h2/p) within each item-container */
+      .item-container > p:first-child {
+        font-size: 1.1em;
+        font-weight: bold;
+        border-bottom: 2px solid #f3c000;
+        padding-bottom: 5px;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      /* Basic style for the content paragraphs */
+      .item-container p {
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* Keep original inline styles for colors/backgrounds */
+      .item-container b,
+      .item-container span {
+        /* Inherit original inline styles */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body-container">
+      <div class="item-container">
+        <p>감지기 부착높이</p>
+        <p data-ke-size="size16" style="text-align: left">
+          8~15m<br /><br />차동식 분포형<br />이온화식 1종 or 2종<br />연기복합형<br />불꽃감지기<br />광전식
+          1종 or 2종<br /><br />15차분<br />이연복<br />불광(동)
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>특수인화물</p>
+        <p data-ke-size="size16" style="text-align: left">
+          디디에 (드록바)가<br />- 디에틸에테르<br />- 디비닐에테르<br /><br />이가
+          두개 빠져서<br />- 이소프렌<br />- 이황화탄소<br /><br />아산병원에서
+          트리클로로실란 처방 받았다<br />- 아세트알데히드<br />-
+          산화프로필렌<br />- 트리클로로실란
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>조연성가스</p>
+        <p data-ke-size="size16" style="text-align: left">
+          <b>공기 오염</b>은 <b>산불</b>의 원인<br /><br />-
+          <span style="background-color: #f3c000"><b>공</b><b>기</b></span
+          ><br />- <b><span style="background-color: #f3c000">오</span></b
+          >존<br />- <b><span style="background-color: #f3c000">염</span></b
+          >소<br />- <b><span style="background-color: #f3c000">산</span></b
+          >소<br />- <b><span style="background-color: #f3c000">불</span></b
+          >소
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>가연성물질</p>
+        <p data-ke-size="size16" style="text-align: left">
+          수천<br />-수소, 천연가스<br /><br />일부<br />- 일산화탄소, 부탄<br /><br />에매<br />-
+          에탄, 메탄<br /><br />가물<br />- 가연성물질
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>누전경보기 구성요소</p>
+        <p data-ke-size="size16" style="text-align: left">
+          <b
+            ><span style="color: #000000"
+              ><span style="background-color: #f3c000">음</span></span
+            ></b
+          >식과 <b><span style="background-color: #f3c000">차</span></b
+          >를 마시고 <b><span style="background-color: #f3c000">영수</span></b
+          >증을 받았다<br /><br />- 음향장치<br />- 차단기<br />- 영상변류기<br />-
+          수신기<br /><br />
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>감지기 교차회로 동작원리</p>
+        <p data-ke-size="size16" style="text-align: justify">
+          하나의 담당구역 내에<br /><br />(2 이상의 감지기회로)<br />설치하고<br /><br />(2
+          이상의 감지기회로) <br />동시에 감지되는때에<br /><br />설비 작동
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>자동화재탐지설비의 중계기 설치기준 (NFSC 203)</p>
+        <p data-ke-size="size16" style="text-align: left">
+          수신기에 의하여 감시되지 아니하는 배선을 통하여 전력을 공급받는 것에
+          있어서는<br /><br />① 전원입력측의 배선에 과전류차단기를 설치하고<br /><br />②
+          해당 전원의 정전시 즉시 수신기에 표시되는 것으로 하며,<br /><br />③
+          상용전원 및 예비전원의 시험을 할 수 있도록 할 것
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>수신기 설치장소(상시근무자 없는 곳)</p>
+        <p data-ke-size="size16" style="text-align: left">
+          상시근무자가 없으면
+          <b><span style="background-color: #f3c000">이(2)관</span></b
+          >한다<br /><br />관: 관계인이 쉽게 접근할수 있고<br />관: 관리가
+          용이한 장소
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>축적형 감지기 설치장소</p>
+        <p data-ke-size="size16" style="text-align: left">
+          축적형 감지기: <b><span style="color: #ee2323">일시적</span></b
+          >으로 발생한 열, 연기 또는 먼지 등으로 인하여 화재신호를 발신할 우려가
+          있는 장소에 설치하는 감지기<br /><br />설치 제외장소(축적기능 없는
+          감지기 사용)<br />- 교차 연수<br /><br />1.
+          <b><span style="color: #ee2323">교차</span></b
+          >회로방식에 사용<br />2. 급속한
+          <b><span style="color: #ee2323">연</span></b
+          >소확대 우려되는 장소<br />3. 축적형
+          <b><span style="color: #ee2323">수</span></b
+          >신기에 연결하여 사용<br /><br />설치장소(축적기능 있는 감지기
+          사용)<br />- 사(4)실 무지<br /><br />1.
+          <b><span style="color: #ee2323">실</span></b
+          >내면적이 <b><span style="color: #ee2323">4</span></b
+          >0m^2 미만인 장소<br />2. <b><span style="color: #ee2323">지</span></b
+          >하층, <b><span style="color: #ee2323">무</span></b
+          >창층으로 환기가 잘되지 않는 장소
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>통로유도등 설치제외장소</p>
+        <p data-ke-size="size16" style="text-align: left">
+          <span style="color: #000000"
+            >통로에 설치하는 유도등. 통로 또는 복도의 경우 2미터 이하마다
+            구부러진 모퉁이에 바닥으로부터 1미터 미만의 벽 또는 바닥에 설치하며,
+            0.5미터 떨어진 바닥면에서 1럭스 이상의 조도를 가져야 한다. 계단 통로
+            유도등, 복도 통로 유도등, 실내 통로 유도등이 있다.<br /></span
+          ><b
+            ><span style="color: #ee2323"><br />통삼(3)</span></b
+          >겹 <b><span style="color: #ee2323">구</span></b
+          >이<br /><br />- <b><span style="color: #ee2323">통</span></b
+          >로유도등 설치제외<br /><br />1. 길이
+          <b><span style="color: #ee2323">3</span></b
+          >0m 미만의 복도, 통로(<b><span style="color: #ee2323">구</span></b
+          >부러지지 않은 복도, 통로)<br />2. 보행거리 20m 미만의 복도,
+          통로(출입구에 피난구유도등 설치된 복도, 통로)
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>3선식 배선시 반드시 점등되어야 하는 경우</p>
+        <p data-ke-size="size16" style="text-align: left">
+          1. 자동화재탐지 설비의 발신기가 작동되는 때<br /><br />2.
+          비상경보설비의 발신기가 작동되는 때<br /><br />3.
+          <b><span style="color: #006dd7">상</span></b
+          >용전원이 <b><span style="color: #006dd7">정</span></b
+          >전되거나 <b><span style="color: #006dd7">전</span></b
+          >원선이 <b><span style="color: #006dd7">단</span></b
+          >선되는 때<br />- <b><span style="color: #006dd7">상정</span></b
+          >이가 <b><span style="color: #006dd7">전단</span></b
+          >지를 돌린다<br /><br />4.
+          <b><span style="color: #ee2323">방</span></b
+          >재업무를 <b><span style="color: #ee2323">통</span></b
+          >제하는 곳 또는 <b><span style="color: #ee2323">전기</span></b
+          >실의 배전반에서 수동으로 점등하는 때<br />-
+          <b><span style="color: #ee2323">방통</span></b
+          >대에서 <b><span style="color: #ee2323">전기</span></b
+          >를 전공했다<br /><br />5. 자동소화설비가 작동되는 때
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>복도통로유도등 설치기준</p>
+        <p data-ke-size="size16" style="text-align: left">
+          화재 등의 비상시에 피난 경로를 알리는 ‘통로 유도등’. 인파가 몰리는
+          복도에서 안전한 출구의 방향을 선명하게 나타내는 조명등이다.<br /><br />복도
+          바닥 복구<br /><br />- <b><span style="color: #ee2323">바닥</span></b
+          >으로부터 높이 1m이하 위치에 설치 할것<br />-
+          <b><span style="color: #ee2323">바닥</span></b
+          >에 설치하는 통로유도등은 하중에 따라 파괴되지 아니하는 강도의 것으로
+          할것<br />- <b><span style="color: #ee2323">복</span></b
+          >도에 설치할것<br />- <b><span style="color: #ee2323">구</span></b
+          >부러진 모퉁이 및 보행거리 20m마다 설치 할것
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>옥내소화전설비 비상전원 설치 기준</p>
+        <p data-ke-size="size16" style="text-align: left">
+          (1) <b><span style="color: #ee2323">점검</span></b
+          >에 편리하고 화재 및 침수 등의 재해로 인한 피해를 받을 우려가 없는
+          곳에 설치<br />(2) 옥내소화전설비를 유효하게
+          <b><span style="color: #ee2323">20분</span></b> 이상 작동할 수 있을
+          것<br />(3) 상용전원으로부터 전력의 공급이
+          <b><span style="color: #ee2323">중단</span></b
+          >된 때에는 자동으로 비상전원으로부터 전력을 공급받을 수 있을 것<br />(4)
+          비상전원의 설치<b><span style="color: #ee2323">장소</span></b
+          >는 다른 장소와 방화구획하여야 하며, 그 장소에는 비상전원의 공급에
+          필요한 기구나 설비 외의 것을 두지 말 것(단, 열병합발전설비에 필요한
+          기구나 설비 제외)<br />(5) 비상전원을
+          <b><span style="color: #ee2323">실내</span></b
+          >에 설치하는 때에는 그 실내에 비상조명등 설치
+        </p>
+      </div>
+
+      <div class="item-container">
+        <p>옥내소화전 가닥수</p>
+        <p data-ke-size="size16" style="text-align: left">
+          ON, OFF식(이 부분이 힌트)<br />ON: 기동<br />OFF: 정지<br />+공통,
+          기동확인표시등 2
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

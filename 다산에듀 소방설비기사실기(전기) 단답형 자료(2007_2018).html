@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* 폰트 및 기타 기본 스타일 설정 */
+    body {
+      font-family: "Inter", "Noto Sans KR", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f3f4f6;
+      font-size: 10pt; /* 1. 전체 글의 크기를 10pt로 설정 */
+    }
+
+    /* 2. 인쇄 시 A4 용지 크기 및 상하좌우 여백 20px 설정 (프린트 전용) */
+    @page {
+      size: A4;
+      margin: 5mm; /* 20px 대신 mm 사용 */
+    }
+
+    /* 웹 화면에서 내용을 담을 컨테이너 정의 (A4 너비 제한 및 2단 적용) */
+    .document-content {
+      max-width: 210mm; /* A4 너비 제한 */
+      margin: 20px auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+
+      /* 3. 인쇄 시 적용될 다단 나눔 설정 (스크롤 화면에도 적용) */
+      column-count: 2;
+      column-gap: 50px; /* 단 사이 간격 */
+    }
+
+    /* 4. 문제 단위(h3 + 답변) 안에서 페이지/단 나눔을 방지 */
+    .problem-unit {
+      /* 인쇄/다단 레이아웃에서 요소 내부의 분할을 방지하는 핵심 속성 */
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+
+      /* 시각적 구분을 위한 스타일 */
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 1px dashed #e5e7eb;
+    }
+
+    /* 5. 기타 스타일 보정 */
+    h2 {
+      /* 제목이 단(column)을 가로지르도록 설정 (새 페이지/단 시작 시 좋음) */
+      /* column-span: all; */
+      margin-top: 15px;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #3b82f6;
+      color: #1e40af;
+    }
+
+    h3 {
+      font-weight: 600;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    ul,
+    ol {
+      margin-left: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    table,
+    th,
+    td {
+      border: 1px solid black; /* 1px width, solid style, black color */
+    }
+  </style>
+  <body>
+    <!-- 인쇄 미리보기 영역 -->
+    <div class="preview-wrapper">
+      <div class="document-content">
+        <h2 id="소방시설전기-관련-용어-및-정의">
+          소방시설(전기) 관련 용어 및 정의
+        </h2>
+        <div class="problem-unit">
+          <h3 id="용어-국문-또는-영문">용어 (국문 또는 영문)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">약자</th>
+                <th style="text-align: center">명칭</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center"><strong>MDF</strong></td>
+                <td style="text-align: center">
+                  주배선반 (Main Distribution Frame)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>LAN</strong></td>
+                <td style="text-align: center">
+                  구내정보통신망 (Local Area Network)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>PBX</strong></td>
+                <td style="text-align: center">
+                  사설구내교환기 (Private Branch eXchange)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>CAD</strong></td>
+                <td style="text-align: center">
+                  컴퓨터지원설계 (Computer Aided Design)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>CVCF</strong></td>
+                <td style="text-align: center">
+                  정전압정주파수장치 (Constant Voltage Constant Frequency)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="영문약자-및-한글-표현">영문약자 및 한글 표현</h3>
+          <table>
+            <colgroup>
+              <col style="width: 47%" />
+              <col style="width: 52%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">한글 명칭</th>
+                <th style="text-align: center">영문약자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  450/750V 저독성 난연 가교폴리올레핀 절연전선
+                </td>
+                <td style="text-align: center"><strong>HFIX</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">접지용 비닐전선</td>
+                <td style="text-align: center"><strong>GV</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">변류기</td>
+                <td style="text-align: center">
+                  <strong>CT</strong> (Current Transformer)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">누전차단기</td>
+                <td style="text-align: center">
+                  <strong>ELB</strong> (Earth Leakage Breaker)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">영상변류기</td>
+                <td style="text-align: center">
+                  <strong>ZCT</strong> (Zero-phase-sequence Current Transformer)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="기타-영문약자-한글-명칭">기타 영문약자 (한글 명칭)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">영문약자</th>
+                <th style="text-align: center">한글 명칭</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center"><strong>ELD</strong></td>
+                <td style="text-align: center">누전경보기</td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>ZCT</strong></td>
+                <td style="text-align: center">영상변류기</td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>OCB</strong></td>
+                <td style="text-align: center">유입차단기</td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>THR</strong></td>
+                <td style="text-align: center">열동계전기</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="ups-및-cvcf">UPS 및 CVCF</h3>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">장치</th>
+                <th style="text-align: center">우리말 명칭</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center"><strong>UPS</strong></td>
+                <td style="text-align: center">
+                  무정전 전원장치 (Uninterruptible Power Supply)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>CVCF</strong></td>
+                <td style="text-align: center">
+                  정전압 정주파수장치 (Constant Voltage Constant Frequency)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="자동화재탐지설비-관련-기준">자동화재탐지설비 관련 기준</h2>
+        </div>
+        <div class="problem-unit">
+          <h3 id="감지기-형식별-특성-화재신호-출력방식">
+            감지기 형식별 특성 (화재신호 출력방식)
+          </h3>
+          <table>
+            <colgroup>
+              <col style="width: 19%" />
+              <col style="width: 80%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">감지기 형식</th>
+                <th style="text-align: center">화재신호 출력방식 설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  <strong>다신호식 감지기</strong>
+                </td>
+                <td style="text-align: center">
+                  일정시간 간격을 두고 각각 다른 2개 이상의 화재신호를 발한다.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>아날로그식 감지기</strong>
+                </td>
+                <td style="text-align: center">
+                  주위의 온도 또는 연기 양의 변화에 따라 각각 다른 전류치 또는
+                  전압치 등의 출력을 발한다.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="공기관식-차동식-분포형-감지기-설치-기준">
+            공기관식 차동식 분포형 감지기 설치 기준
+          </h3>
+          <table>
+            <colgroup>
+              <col style="width: 44%" />
+              <col style="width: 56%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">검출부의 설치높이</td>
+                <td style="text-align: center">
+                  바닥으로부터 <strong>0.8m 이상 1.5m 이하</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">검출부의 경사도</td>
+                <td style="text-align: center"><strong>5도 이하</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">공기관의 노출부분 길이</td>
+                <td style="text-align: center">
+                  감지구역마다 <strong>20m 이상</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  검출부분에 접속하는 공기관의 길이
+                </td>
+                <td style="text-align: center"><strong>100m 이하</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">공기관의 재질</td>
+                <td style="text-align: center"><strong>중공동관</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">공기관의 두께와 외경</td>
+                <td style="text-align: center">
+                  두께: <strong>0.3㎜ 이상</strong>, 외경:
+                  <strong>1.9㎜ 이상</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="감지기-관련-기준">감지기 관련 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 29%" />
+              <col style="width: 70%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  <strong>축적기능이 없는 감지기</strong> 설치 장소
+                </td>
+                <td style="text-align: center">
+                  교차회로방식에 사용되는 감지기, 급속한 연소확대가 우려되는
+                  장소에 사용되는 감지기, 축적기능이 있는 수신기에 연결하여
+                  사용하는 감지기
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>축적기능이 있는 감지기</strong>를 사용하는 경우
+                </td>
+                <td style="text-align: center">
+                  지하층·무창층으로 환기가 잘 되지 않는 장소, 실내면적이 40㎡
+                  미만인 장소, 감지기의 부착면과 실내 바닥의 거리가 2.3m 이하인
+                  장소
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>작동표시장치를 설치하지 않아도 되는 감지기</strong>
+                </td>
+                <td style="text-align: center">
+                  방폭구조의 감지기, 감지기가 작동한 경우 수신기에 그 감지기가
+                  작동한 내용이 표시되는 감지기, 차동식 분포형 감지기, 정온식
+                  감지선형 감지기
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>이온화식 연기감지기</strong> 방사선원 및 역할
+                </td>
+                <td style="text-align: center">
+                  아메리슘 241: 이온전류의 흐름을 돕는다.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>이온화식 연기감지기</strong> 공기유입구 이격 거리
+                </td>
+                <td style="text-align: center"><strong>1.5m 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>이온화식 연기감지기</strong> 벽면 이격 거리
+                </td>
+                <td style="text-align: center"><strong>0.6m 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>거실 높이 20m 이상</strong> 되는 곳에 설치 가능한
+                  감지기 2가지
+                </td>
+                <td style="text-align: center">
+                  불꽃감지기, 광전식(분리형, 공기흡입형) 중 아날로그방식
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="정온식-감지선형-감지기-관련">정온식 감지선형 감지기 관련</h3>
+          <table>
+            <colgroup>
+              <col style="width: 33%" />
+              <col style="width: 66%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">공칭작동온도별 색상</td>
+                <td style="text-align: center">
+                  백색: <strong>80℃ 이하</strong>, 청색:
+                  <strong>80℃ 이상 120℃ 이하</strong>, 적색:
+                  <strong>120℃ 이상</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">늘어짐 방지 장치 2가지</td>
+                <td style="text-align: center">
+                  <strong>보조선</strong>, <strong>고정금구</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">굴곡반경 기준</td>
+                <td style="text-align: center"><strong>5㎝ 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  내화구조 건축물 1종 감지기 수평거리
+                </td>
+                <td style="text-align: center"><strong>4.5m</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  단자부와 마감고정금구 설치간격
+                </td>
+                <td style="text-align: center"><strong>10㎝</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="광전식-분리형-감지기-관련">광전식 분리형 감지기 관련</h3>
+          <table>
+            <colgroup>
+              <col style="width: 34%" />
+              <col style="width: 65%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">송광부/수광부 설치 위치</td>
+                <td style="text-align: center">
+                  설치된 뒷벽으로부터 <strong>1m 이내</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">광축길이</td>
+                <td style="text-align: center">
+                  <strong>공칭감시거리</strong> 범위 이내
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">광축의 높이</td>
+                <td style="text-align: center">
+                  천장 등 높이의 <strong>80%</strong> 이상
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">광축의 벽 이격 거리</td>
+                <td style="text-align: center"><strong>0.6m 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">공칭감시거리</td>
+                <td style="text-align: center">
+                  <strong>5m</strong> 이상 <strong>100m</strong> 이하 (5m 간격)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">광전식 스포트형 감지기 원리</td>
+                <td style="text-align: center">
+                  연기입자에 의한 <strong>난반사</strong> 감지
+                  (<strong>산란광</strong>식)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">광전식 분리형 감지기 원리</td>
+                <td style="text-align: center">
+                  연기입자에 의해 수광량이 <strong>감소</strong> 감지
+                  (<strong>감광</strong>식)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="수신기-관련-기준">수신기 관련 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 39%" />
+              <col style="width: 60%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  <strong>GP형 수신기</strong> 감지기회로 공통선 접속 경계구역
+                  수
+                </td>
+                <td style="text-align: center"><strong>7개 이하</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>감지기회로의 전로저항</strong>
+                </td>
+                <td style="text-align: center"><strong>50Ω 이하</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>감지기 접속 배선의 전압</strong>
+                </td>
+                <td style="text-align: center">
+                  감지기 정격전압의 <strong>80%</strong> 이상
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>공통선시험</strong> 목적
+                </td>
+                <td style="text-align: center">
+                  공통선이 담당하고 있는 경계구역의 적정 여부를 확인하기 위하여
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>화재표시 작동시험</strong> 확인 사항 3가지
+                </td>
+                <td style="text-align: center">
+                  릴레이의 작동, 음향장치의 작동, 화재표시등, 지구표시등 등의
+                  표시장치 점등
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>동시작동시험</strong> 목적
+                </td>
+                <td style="text-align: center">
+                  감지기회로가 동시에 5회선 작동하더라도 수신기의 기능에 이상이
+                  없는지 여부 확인
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="수신기-종류-및-특징">수신기 종류 및 특징</h3>
+          <table>
+            <colgroup>
+              <col style="width: 8%" />
+              <col style="width: 91%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">수신기 종류</th>
+                <th style="text-align: center">설명 및 특징</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center"><strong>P형 수신기</strong></td>
+                <td style="text-align: center">
+                  감지기 또는 발신기로부터 신호를 공통신호로 수신하여 경보.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>R형 수신기</strong></td>
+                <td style="text-align: center">
+                  감지기 또는 발신기로부터 신호를 고유신호로 수신하여 경보.
+                  (선로수 적음, 선로길이 길게 가능, 증설/이설 용이, 신호 전달
+                  확실, 화재발생지구 숫자로 표시 가능)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>GP형 수신기</strong></td>
+                <td style="text-align: center">
+                  P형 수신기와 가스누설경보기의 수신부 기능을 겸한 것.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="발신기-관련-기준">발신기 관련 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 23%" />
+              <col style="width: 76%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">조작 스위치 설치높이</td>
+                <td style="text-align: center">
+                  바닥으로부터 <strong>0.8m 이상 1.5m 이하</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">층마다 설치</td>
+                <td style="text-align: center">층마다 설치</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">수평거리</td>
+                <td style="text-align: center">
+                  하나의 발신기까지의 수평거리가 <strong>25m</strong> 이하
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">표시등 설치 위치</td>
+                <td style="text-align: center">함의 <strong>상부</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">표시등 점멸 상태</td>
+                <td style="text-align: center"><strong>항상 점등</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">표시등 식별 기준</td>
+                <td style="text-align: center">
+                  부착면으로부터 <strong>15° 이상의 범위</strong> 안에서
+                  <strong>10m 거리</strong>에서 식별 가능한
+                  <strong>적색등</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  P형 발신기 구조/기능/사용 수신기
+                </td>
+                <td style="text-align: center">
+                  구조: 스위치, 전화잭, 응답램프. 기능: 스위치 작동 시 신호
+                  송신, 전화 통화. 수신기: P형 수신기, R형 수신기
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="비화재보-방지-대책-및-원인">비화재보 방지 대책 및 원인</h3>
+          <table>
+            <colgroup>
+              <col style="width: 23%" />
+              <col style="width: 76%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  <strong>일과성 비화재보 방지책</strong>
+                </td>
+                <td style="text-align: center">
+                  비화재보에 적응성이 있는 감지기 사용, 환경적응성이 있는 감지기
+                  사용, 감지기 설치수의 최소화, 연기감지기의 설치제한,
+                  경년변화에 따른 유지보수, 아날로그 감지기와 인텔리전트
+                  수신기의 사용
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong
+                    >감지기/수신기 기능상 문제로 인한 비화재보 원인
+                    3가지</strong
+                  >
+                </td>
+                <td style="text-align: center">
+                  수신기 릴레이의 오동작, 전자파에 의한 감지기 오동작, 먼지·분진
+                  등에 의한 감지기 오동작
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>비화재보 발생 원인 4가지</strong>
+                </td>
+                <td style="text-align: center">
+                  표시회로의 절연불량, 감지기의 기능 불량, 수신기의 기능 불량,
+                  감지기가 설치되어 있는 장소의 온도변화가 급격한 것에 의한 것
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="배선-및-배관-관련-기준">배선 및 배관 관련 기준</h2>
+        </div>
+        <div class="problem-unit">
+          <h3 id="배선-접속시-주의사항">배선 접속시 주의사항</h3>
+          <table>
+            <colgroup>
+              <col style="width: 14%" />
+              <col style="width: 85%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">전기저항</td>
+                <td style="text-align: center">
+                  접속으로 인하여 전기저항이 증가하지 않을 것
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">전선의 강도</td>
+                <td style="text-align: center">
+                  접속 부분의 전선의 강도를
+                  <strong>20% 이상 감소시키지 않을 것</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">절연</td>
+                <td style="text-align: center">
+                  접속 부분은 절연전선의 절연물과 동등 이상의 절연효력이 있는
+                  것으로 충분히 피복할 것
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">전기화학적 성질</td>
+                <td style="text-align: center">
+                  전기화학적 성질이 다른 도체를 접속하는 경우는 접속 부분에
+                  전기적 부식이 생기지 않도록 할 것
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="금속관-배선-굴곡-기준">금속관 배선 굴곡 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 17%" />
+              <col style="width: 82%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">관 안측 반지름</td>
+                <td style="text-align: center">
+                  관 안지름의 <strong>6배 이상</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">굴곡 개소</td>
+                <td style="text-align: center">
+                  3개소를 초과하는 <strong>직각</strong> 또는
+                  <strong>직각</strong>에 가까운 굴곡개소를 만들어서는 안 됨
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">풀박스 설치 기준</td>
+                <td style="text-align: center">
+                  굴곡개소가 많거나 관의 길이가 <strong>30m</strong>를 초과하는
+                  경우
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="금속관-공사-부속품">금속관 공사 부속품</h3>
+          <table>
+            <colgroup>
+              <col style="width: 76%" />
+              <col style="width: 23%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">용도</th>
+                <th style="text-align: center">명칭</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  금속관이 고정되어 있어 돌리지 못할 때 사용
+                </td>
+                <td style="text-align: center">
+                  <strong>유니언 커플링</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">금속관 상호간의 접속에 사용</td>
+                <td style="text-align: center"><strong>커플링</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  아우트렛 박스에 로크 너트만으로 고정하기 어려울 때 사용
+                </td>
+                <td style="text-align: center"><strong>링리듀서</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  금속관과 박스 접속 시 구멍이 관보다 클 때 사용
+                </td>
+                <td style="text-align: center"><strong>링리듀서</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">전선의 절연피복 보호용</td>
+                <td style="text-align: center"><strong>부싱</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  관을 직각으로 굽히는 곳에 사용(노출배관)
+                </td>
+                <td style="text-align: center">
+                  <strong>유니버설 엘보</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  금속관과 박스를 고정시킬 때 쓰여지는 배관부속자재
+                </td>
+                <td style="text-align: center"><strong>로크너트</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="배관-공사-방법">배관 공사 방법</h3>
+          <table>
+            <colgroup>
+              <col style="width: 18%" />
+              <col style="width: 82%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">공사 종류</th>
+                <th style="text-align: center">사용 장소</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  <strong>가요전선관공사</strong>
+                </td>
+                <td style="text-align: center">
+                  굴곡장소가 많거나 금속관공사의 시공이 어려운 경우, 전동기와
+                  옥내배선을 연결할 경우
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="절연-저항-측정">절연 저항 측정</h3>
+          <table>
+            <colgroup>
+              <col style="width: 52%" />
+              <col style="width: 47%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  220V 전로, 절연저항
+                  <span class="math inline">0.2<em>M</em><em>Ω</em></span> 일 때
+                  누설전류
+                </td>
+                <td style="text-align: center">
+                  <span class="math inline">1.1<em>m</em><em>A</em></span>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  감지기/부속회로의 절연저항 (1경계구역마다)
+                </td>
+                <td style="text-align: center">
+                  <strong
+                    ><span class="math inline">0.1<em>M</em><em>Ω</em></span>
+                    이상</strong
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">감지기의 절연저항 판정기준</td>
+                <td style="text-align: center">
+                  <strong
+                    ><span class="math inline">50<em>M</em><em>Ω</em></span>
+                    이상</strong
+                  >
+                  (직류 500V 절연저항계)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">감지기의 절연저항 측정위치</td>
+                <td style="text-align: center">
+                  절연된 단자 간 및 단자와 외함 간
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="소방용-케이블과-다른-용도의-케이블-배선-기준">
+            소방용 케이블과 다른 용도의 케이블 배선 기준
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">피복과 피복간의 이격거리</td>
+                <td style="text-align: center"><strong>15㎝ 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">불연성 격벽 설치 시 높이</td>
+                <td style="text-align: center">
+                  굵은 케이블 지름의 <strong>1.5배 이상</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="금속관-공사-매입-및-접속">금속관 공사 매입 및 접속</h3>
+          <table>
+            <colgroup>
+              <col style="width: 21%" />
+              <col style="width: 78%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">땅속 매입 시 방호장치</td>
+                <td style="text-align: center">
+                  방수, <strong>방부</strong> 조치로서 <strong>주트</strong>를
+                  감싸거나 <strong>콘크리트</strong>로 감싸는 등의 방호장치를
+                  해야 한다.
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  박스 접속 (틀어 끼우는 방법 외)
+                </td>
+                <td style="text-align: center">
+                  <strong>로크너트</strong> 2개를 사용하여 박스의 내, 외면을
+                  견고하게 조인다. (단, <strong>부싱</strong> 등으로 견고하게
+                  부착할 경우 제외)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="유도등-및-비상방송설비-관련-기준">
+            유도등 및 비상방송설비 관련 기준
+          </h2>
+        </div>
+        <div class="problem-unit">
+          <h3 id="유도등-용어의-정의">유도등 용어의 정의</h3>
+          <table>
+            <colgroup>
+              <col style="width: 20%" />
+              <col style="width: 79%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">유도등 종류</th>
+                <th style="text-align: center">정의</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">
+                  <strong>피난구유도등</strong>
+                </td>
+                <td style="text-align: center">
+                  피난구 또는 피난경로로 사용되는 출입구를 표시하여 피난을
+                  유도하는 등
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  <strong>복도통로유도등</strong>
+                </td>
+                <td style="text-align: center">
+                  피난통로가 되는 복도에 설치하는 통로유도등으로서 피난구의 방향
+                  명시
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center"><strong>객석유도등</strong></td>
+                <td style="text-align: center">객석의 통로, 바닥, 벽에 설치</td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="통로유도등-관련-기준">통로유도등 관련 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 22%" />
+              <col style="width: 77%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">표시면 바탕색</td>
+                <td style="text-align: center"><strong>백색</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">종류 3가지</td>
+                <td style="text-align: center">
+                  복도통로유도등, 거실통로유도등, 계단통로유도등
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">복도통로유도등 설치 기준</td>
+                <td style="text-align: center">
+                  복도에 설치, 구부러진 모퉁이 및 보행거리
+                  <strong>20m마다</strong> 설치, 바닥으로부터 높이
+                  <strong>1m 이하</strong>의 위치에 설치
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  벽면설치 통로유도등 조도 측정
+                </td>
+                <td style="text-align: center">
+                  통로유도등의 바로 밑의 바닥으로부터 수평으로
+                  <strong>0.5m</strong> 떨어진 지점에서 측정하여
+                  <strong>1lx 이상</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  바닥매설 통로유도등 조도 측정
+                </td>
+                <td style="text-align: center">
+                  통로유도등의 직상부 <strong>1m</strong>의 높이에서 측정하여
+                  <strong>1lx 이상</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="피난구유도등-관련-기준">피난구유도등 관련 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 22%" />
+              <col style="width: 77%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">설치높이</td>
+                <td style="text-align: center">
+                  바닥으로부터 높이 <strong>1.5m 이상</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">표시면 색상</td>
+                <td style="text-align: center">
+                  <strong>녹색바탕에 백색문자</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">복합표시형 피난구유도등</td>
+                <td style="text-align: center">
+                  피난구유도등의 표시면과 피난목적이 아닌 안내표시면이 구분되어
+                  함께 설치된 유도등
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">식별 거리</td>
+                <td style="text-align: center">
+                  직선거리 <strong>30m</strong>의 위치에서 쉽게 식별
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="객석유도등-설치-제외">객석유도등 설치 제외</h3>
+          <table>
+            <colgroup>
+              <col style="width: 15%" />
+              <col style="width: 84%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">제외 조건 2가지</th>
+                <th style="text-align: center">내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">채광</td>
+                <td style="text-align: center">
+                  채광이 충분한 객석(주간에만 사용)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">통로유도등</td>
+                <td style="text-align: center">
+                  통로유도등이 설치된 객석(거실 각 부분에서 거실 출입구까지의
+                  보행거리
+                  <strong>20m 이하</strong>)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="비상방송설비-관련-기준">비상방송설비 관련 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 21%" />
+              <col style="width: 78%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">음량조정기 배선</td>
+                <td style="text-align: center"><strong>3선식</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">조작부 조작스위치 높이</td>
+                <td style="text-align: center">
+                  <strong>0.8m 이상 1.5m 이하</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  경보층 (7층 건물, 5층 발화 시)
+                </td>
+                <td style="text-align: center">
+                  발화층인 <strong>5층</strong>, 직상층인 <strong>6층</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">방송 개시 소요시간</td>
+                <td style="text-align: center">
+                  화재신호 수신 후 <strong>10초 이하</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">확성기 설치 기준 (수평거리)</td>
+                <td style="text-align: center">
+                  각 층의 각 부분으로부터 하나의 확성기까지의 수평거리가
+                  <strong>25m 이하</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  경보방식 (30층 이상 고층건축물)
+                </td>
+                <td style="text-align: center">
+                  발화층 및 직상층 우선경보방식
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  경보층 (30층 이상 고층건축물)
+                </td>
+                <td style="text-align: center">
+                  2층 이상 발화: 발화층, 직상 4개층. 1층 발화: 발화층, 직상
+                  4개층, 지하층. 지하층 발화: 발화층, 직상층, 기타의 지하층.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="가스누설경보기-관련-기준">가스누설경보기 관련 기준</h2>
+          <table>
+            <colgroup>
+              <col style="width: 16%" />
+              <col style="width: 83%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">가스누설표시까지 소요시간</td>
+                <td style="text-align: center"><strong>60초 이내</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">지구등 색깔</td>
+                <td style="text-align: center"><strong>황색</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">예비전원 종류</td>
+                <td style="text-align: center">
+                  알칼리계 2차 축전지, 리튬계 2차 축전지 또는 무보수밀폐형
+                  연축전지
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">예비전원 용량 (1회선용)</td>
+                <td style="text-align: center">
+                  감시상태 <strong>20분</strong> 계속 후 유효하게 작동되어
+                  <strong>10분</strong>간 경보
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">예비전원 용량 (2회로 이상)</td>
+                <td style="text-align: center">
+                  감시상태 <strong>10분</strong> 계속 후 2회선을 유효하게
+                  작동시키고 <strong>10분</strong>간 경보
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  절연된 충전부와 외함 간 절연저항
+                </td>
+                <td style="text-align: center">
+                  <strong
+                    ><span class="math inline">5<em>M</em><em>Ω</em></span>
+                    이상</strong
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">절연된 선로 간 절연저항</td>
+                <td style="text-align: center">
+                  <strong
+                    ><span class="math inline">20<em>M</em><em>Ω</em></span>
+                    이상</strong
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">주음향장치 공업용 음량</td>
+                <td style="text-align: center"><strong>90dB 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">고장표시장치용 음량</td>
+                <td style="text-align: center"><strong>60dB 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">분류 (구조에 따라)</td>
+                <td style="text-align: center">
+                  <strong>단독</strong>형, <strong>분리</strong>형
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">분류 (용도에 따라)</td>
+                <td style="text-align: center">
+                  <strong>가정</strong>용, <strong>영업</strong>용,
+                  <strong>공업</strong>용
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">경보기구 명칭</td>
+                <td style="text-align: center">
+                  화재의 발생 또는 화재의 발생이 예상되는 상황에 대하여 경보를
+                  발하여 주는 설비의 명칭은? <strong>경보기구</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  1급과 2급 구분 경계 전로의 정격전류
+                </td>
+                <td style="text-align: center"><strong>60A</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">탐지부</td>
+                <td style="text-align: center">
+                  가스누설을 검지하여 중계기 또는 수신부에 가스누설의 신호를
+                  보내는 부분 또는 가스누설을 검지하여 이를 음향으로 경보하고
+                  동시에 중계기 또는 수신부에 가스누설의 신호를 발신하는 부분
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="무선통신보조설비-관련-기준">무선통신보조설비 관련 기준</h2>
+          <table>
+            <colgroup>
+              <col style="width: 21%" />
+              <col style="width: 78%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">누설동축케이블 재질</td>
+                <td style="text-align: center">
+                  <strong>불연 또는 난연성</strong>의 것
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">고압 전로 이격거리</td>
+                <td style="text-align: center">
+                  <strong>1.5m 이상</strong> (정전기차폐장치 설치 시 제외)
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">고정 간격</td>
+                <td style="text-align: center"><strong>4m 이내마다</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">끝 부분 설치</td>
+                <td style="text-align: center">
+                  <strong>무반사종단저항</strong>을 견고하게 설치
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">임피던스</td>
+                <td style="text-align: center">
+                  <strong
+                    ><span class="math inline">50<em>Ω</em></span></strong
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">증폭기 비상전원 용량</td>
+                <td style="text-align: center">
+                  유효하게 <strong>30분 이상</strong> 작동
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">무선기기접속단자 설치높이</td>
+                <td style="text-align: center">
+                  바닥으로부터 높이 <strong>0.8m 이상 1.5m 이하</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">지상 접속단자 설치 간격</td>
+                <td style="text-align: center">
+                  보행거리 <strong>300m 이내마다</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">다른 용도 접속단자 이격거리</td>
+                <td style="text-align: center"><strong>5m 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">무반사 종단저항 설치목적</td>
+                <td style="text-align: center">
+                  전송로로 전송되는 전자파가 전송로의 종단에서 반사되어 교신을
+                  방해하는 것을 막기 위함
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">종류 3가지</td>
+                <td style="text-align: center">
+                  누설동축케이블 방식, 안테나방식, 누설동축케이블과 안테나의
+                  혼합방식
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">분배기 기능</td>
+                <td style="text-align: center">
+                  신호의 전송로가 분기되는 장소에 설치하는 것으로 임피던스
+                  매칭과 신호 균등분배를 위해 사용하는 장치
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">분파기 기능</td>
+                <td style="text-align: center">
+                  서로 다른 주파수의 합성된 신호를 분리하기 위해 사용하는 장치
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">혼합기 기능</td>
+                <td style="text-align: center">
+                  두 개 이상의 입력신호를 원하는 비율로 조합한 출력이 발생하도록
+                  하는 장치
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="비상콘센트설비-관련-기준">비상콘센트설비 관련 기준</h2>
+          <table>
+            <colgroup>
+              <col style="width: 26%" />
+              <col style="width: 73%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">전원 종류 및 용량</td>
+                <td style="text-align: center">
+                  단상 교류, <strong>1.5kVA 이상</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">절연저항값 (500V 절연저항계)</td>
+                <td style="text-align: center">
+                  <strong
+                    ><span class="math inline">20<em>M</em><em>Ω</em></span>
+                    이상</strong
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  절연내력 시험전압 (150V 이하)
+                </td>
+                <td style="text-align: center">
+                  <strong>1000V</strong>의 실효전압
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  절연내력 시험전압 (150V 이상)
+                </td>
+                <td style="text-align: center">
+                  정격전압에 2를 곱하여 1000을 더한 실효전압
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">절연내력 판정방법</td>
+                <td style="text-align: center">
+                  <strong>1분 이상 견딜 것</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">플러그 접속기</td>
+                <td style="text-align: center">
+                  <strong>접지형</strong> 플러그 접속기
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">하나의 전용회로 설치 개수</td>
+                <td style="text-align: center"><strong>10개 이하</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">7개 비상콘센트 시 전선 용량</td>
+                <td style="text-align: center">
+                  <strong>3개</strong>의 공급용량을 합한 용량 이상
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  전원부와 외함 사이 절연저항 측정 적합성 (30M<span
+                    class="math inline"
+                    ><em>Ω</em></span
+                  >)
+                </td>
+                <td style="text-align: center">
+                  <strong>적합</strong>,
+                  <span class="math inline">20<em>M</em><em>Ω</em></span>
+                  이상이므로
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">저압수전 시 분기 위치</td>
+                <td style="text-align: center">
+                  <strong>인입개폐기 직후에서</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">특고압/고압수전 시 분기 위치</td>
+                <td style="text-align: center">
+                  <strong
+                    >전력용 변압기 2차측의 주차단기 1차측 또는 2차측에서</strong
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">보호함 표지</td>
+                <td style="text-align: center">
+                  <strong>“비상콘센트”</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">보호함 상부 표시등</td>
+                <td style="text-align: center">
+                  <strong>적색</strong>의 <strong>표시등</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">설치 대상 (11층 이상)</td>
+                <td style="text-align: center">
+                  <strong>11층 이상의 층</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">설치 대상 (지하층)</td>
+                <td style="text-align: center">
+                  지하층의 층수가 3층 이상이고 지하층의 바닥면적의 합계가
+                  <span class="math inline">1000<em>m</em><sup>2</sup></span>
+                  이상인 것은 <strong>지하층의 모든 층</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">설치 대상 (터널)</td>
+                <td style="text-align: center">
+                  지하가 중 터널로서 길이가 <strong>500m 이상</strong>인 것
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  자가발전설비/비상전원수전설비 제외 2가지
+                </td>
+                <td style="text-align: center">
+                  둘 이상의 변전소에서 전력을 동시에 공급받는 경우, 하나의
+                  변전소에서 전력 공급이 중단될 때 자동으로 타변전소에서 전력
+                  공급이 가능한 상용전원 설치
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="소화설비-및-기타-기준">소화설비 및 기타 기준</h2>
+        </div>
+        <div class="problem-unit">
+          <h3 id="분산형-중계기의-설치장소">분산형 중계기의 설치장소</h3>
+          <p>
+            소화전함 및 단독 발신기세트 내부, 댐퍼 수동조작함 내부 및
+            조작스위치함 내부, 스프링클러 접속박스 내 및 SVP 판넬 내부, 셔터,
+            배연창, 제연스크린, 연동제어기 내부, 할론 패키지 또는 판넬 내부,
+            방화문 중계기는 근접 댐퍼 수동조작함 내부
+          </p>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="지하공동구에-설치-가능한-감지기의-종류">
+            지하공동구에 설치 가능한 감지기의 종류
+          </h3>
+          <p>
+            불꽃감지기, 정온식 감지선형 감지기, 분포형 감지기, 복합형 감지기,
+            광전식 분리형 감지기, 아날로그방식의 감지기, 다신호방식의 감지기,
+            축적방식의 감지기
+          </p>
+          <hr />
+          <h3
+            id="교차회로방식으로-하지-않아도-되는-감지기-지하공동구-감지기와-동일"
+          >
+            교차회로방식으로 하지 않아도 되는 감지기 (지하공동구 감지기와 동일)
+          </h3>
+          <p>
+            불꽃감지기, 정온식 감지선형 감지기, 분포형 감지기, 복합형 감지기,
+            광전식 분리형 감지기, 아날로그방식의 감지기, 다신호방식의 감지기,
+            축적방식의 감지기
+          </p>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="교차회로방식을-적용하여야-하는-설비">
+            교차회로방식을 적용하여야 하는 설비
+          </h3>
+          <p>
+            분말소화설비, 할론소화설비, 이산화탄소 소화설비, 준비작동식
+            스프링클러설비, 일제살수식 스프링클러설비, 할로겐화합물 및
+            불활성기체소화설비
+          </p>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="이산화탄소-소화설비-기준">이산화탄소 소화설비 기준</h3>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">전역방출방식 설치 개소</td>
+                <td style="text-align: center">
+                  <strong>방호구역</strong>마다
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">국소방출방식 설치 개소</td>
+                <td style="text-align: center">
+                  <strong>방호대상물</strong>마다
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">기동장치 조작부 설치높이</td>
+                <td style="text-align: center">
+                  바닥으로부터 높이 <strong>0.8~1.5m 이하</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">비상스위치 설치 목적</td>
+                <td style="text-align: center">
+                  <strong>소화약제의 방출 지연</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="옥내소화전설비-비상전원">옥내소화전설비 비상전원</h3>
+          <table>
+            <colgroup>
+              <col style="width: 19%" />
+              <col style="width: 80%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">비상전원의 종류 3가지</td>
+                <td style="text-align: center">
+                  자가발전설비, 축전지설비, 전기저장장치
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">유효 작동 시간</td>
+                <td style="text-align: center"><strong>20분 이상</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">
+                  감시제어반 기능 (저수위 경보)
+                </td>
+                <td style="text-align: center">
+                  수조 또는 물올림탱크가 <strong>저수위</strong>로 될 때 표시등
+                  및 음향으로 경보
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">감시제어반 기능 (시험)</td>
+                <td style="text-align: center">
+                  기동용 수압개폐장치의 압력스위치회로, 수조 또는 물올림탱크의
+                  감시회로마다 <strong>도통</strong>시험 및
+                  <strong>작동</strong>시험을 할 수 있을 것
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="탬퍼스위치-설치장소">탬퍼스위치 설치장소</h3>
+          <p>
+            주펌프의 흡입측/토출측에 설치된 개폐밸브, 고가수조와 수직배관 사이의
+            개폐밸브, 유수검지장치/일제개방밸브의 1차측/2차측 개폐밸브,
+            충압펌프의 흡입측/토출측에 설치된 개폐밸브
+          </p>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="축전지-관련">축전지 관련</h3>
+          <table>
+            <colgroup>
+              <col style="width: 16%" />
+              <col style="width: 71%" />
+              <col style="width: 12%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">연축전지</th>
+                <th style="text-align: center">알칼리축전지</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">공칭전압</td>
+                <td style="text-align: center"><strong>2V/cell</strong></td>
+                <td style="text-align: center"><strong>1.2V/cell</strong></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">회복충전방식</td>
+                <td style="text-align: center">
+                  과방전, 가벼운 설페이션현상 등 발생 시 기능회복을 위한 충전
+                  방식
+                </td>
+                <td style="text-align: center"></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">세류충전방식</td>
+                <td style="text-align: center">자기방전량만 충전하는 방식</td>
+                <td style="text-align: center"></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">용량저하율(보수율)</td>
+                <td style="text-align: center">
+                  축전지의 수명 말기에 부하를 만족하는 용량을 결정하기 위한 계수
+                  (<strong>0.8</strong>)
+                </td>
+                <td style="text-align: center"></td>
+              </tr>
+              <tr>
+                <td style="text-align: center">CS형/HS형 구분</td>
+                <td style="text-align: center">
+                  CS형: 부하에 따라 일정한 방전전류. HS형: 부하에 따라
+                  방전전류가 급격히 변함.
+                </td>
+                <td style="text-align: center"></td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+          <h2 id="기타-설비-기준">기타 설비 기준</h2>
+        </div>
+        <div class="problem-unit">
+          <h3 id="기동스위치-조작에-의한-기동용기-미개방-원인">
+            기동스위치 조작에 의한 기동용기 미개방 원인
+          </h3>
+          <p>
+            제어반의 공급전원 차단, 기동스위치의 접점 불량, 제어반에서 기동용
+            솔레노이드에 연결된 배선의 단선/오접속, 기동용 솔레노이드의 코일
+            단선/절연 파괴
+          </p>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="선식-배선-시-반드시-점등되어야-하는-경우-유도등">
+            3선식 배선 시 반드시 점등되어야 하는 경우 (유도등)
+          </h3>
+          <p>
+            자동화재탐지설비의 감지기 또는 발신기가 작동되는 때, 비상경보설비의
+            발신기가 작동되는 때, 상용전원이 정전되거나 전원선이 단선되는 때,
+            방재업무를 통제하는 곳 또는 전기실의 배전반에서 수동으로 점등하는
+            때, 자동소화설비가 작동되는 때
+          </p>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="시각경보장치-설치-기준">시각경보장치 설치 기준</h3>
+          <table>
+            <colgroup>
+              <col style="width: 19%" />
+              <col style="width: 80%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">설치 장소</td>
+                <td style="text-align: center">
+                  복도·통로·청각장애인용 객실 및 공용으로 사용하는
+                  <strong>거실</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">공연장 등 설치 위치</td>
+                <td style="text-align: center">
+                  시선이 집중되는 <strong>무대부 부분</strong> 등에 설치
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">설치 높이</td>
+                <td style="text-align: center">
+                  바닥으로부터 <strong>2m 이상 2.5m 이하</strong> (천장높이 2m
+                  이하는 천장에서 <strong>0.15m</strong> 이내)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="배연창설비-기준">배연창설비 기준</h3>
+          <table>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">기준</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">설치 대상</td>
+                <td style="text-align: center">
+                  <strong>6층 이상</strong> 건물
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">구동 방식 2가지</td>
+                <td style="text-align: center">
+                  <strong>솔레노이드 방식</strong>, <strong>모터 방식</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">방화구획당 설치 개소</td>
+                <td style="text-align: center"><strong>1개소</strong> 이상</td>
+              </tr>
+              <tr>
+                <td style="text-align: center">유효면적</td>
+                <td style="text-align: center">
+                  <strong
+                    ><span class="math inline"
+                      >1<em>m</em><sup>2</sup></span
+                    ></strong
+                  >
+                  이상
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <hr />
+        </div>
+        <div class="problem-unit">
+          <h3 id="무선통신보조설비의-무반사-종단저항-설치-위치-및-목적">
+            무선통신보조설비의 무반사 종단저항 설치 위치 및 목적
+          </h3>
+          <table>
+            <colgroup>
+              <col style="width: 9%" />
+              <col style="width: 90%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th style="text-align: center">항목</th>
+                <th style="text-align: center">내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center">설치 위치</td>
+                <td style="text-align: center">
+                  <strong>누설동축케이블의 끝 부분</strong>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: center">설치 목적</td>
+                <td style="text-align: center">
+                  전송로로 전송되는 전자파가 전송로의 종단에서 반사되어 교신을
+                  방해하는 것을 막기 위함
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
